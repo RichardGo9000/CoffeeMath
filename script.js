@@ -43,7 +43,7 @@ function randomProblem() {
     "m",
     "f",
     "p",
-    "po",
+    /*"po",*/
     "e"
   ];
   let random = Math.floor(Math.random() * possibleQuestions.length);
@@ -146,12 +146,14 @@ function generatePercentageProblem() {
   correctAnswer = (a / b) * 100;
   correctAnswer = Math.round(correctAnswer * 1000) / 1000; //round to 3 decimals
   correctAnswer = `${correctAnswer}%`;
-  questionString = `What percentage is ${a} of ${b}? (__%)`;
+  questionString = `What percentage of ${b} is the number ${a}? (__%)`;
 
   // document.getElementById("question").innerHTML = questionString;
   display(questionString, "");
 }
 
+
+// Percent Of problem needs to be worded correctly
 function generatePercentOfProblem() {
   // `What number is ${a}% of ${b}?`
   // (part / the whole) * 100
