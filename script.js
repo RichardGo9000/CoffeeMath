@@ -31,6 +31,7 @@ function randomProblem() {
   document.getElementById("answer").value = "";
   document.getElementById("submit").value = "Check";
 
+  //a:addition, s:subtraction, d:division, m:multiplication, f:factorial, p:percentage, po:percent of, e:exponent
   const possibleQuestions = [
     "a",
     "s",
@@ -43,6 +44,7 @@ function randomProblem() {
     "f",
     "p",
     "po",
+    "e"
   ];
   let random = Math.floor(Math.random() * possibleQuestions.length);
   let nextQuestion = possibleQuestions[random];
@@ -69,6 +71,9 @@ function randomProblem() {
     case "po":
       generatePercentOfProblem();
       break;
+    case "e":
+      generateExponentProblem();
+      break;
   }
   questionList.push(`${questionNumber}) ${questionString} = ${correctAnswer}`);
   console.log(`${questionNumber}) ${questionString} = ${correctAnswer}`); //DEBUGGING
@@ -91,6 +96,19 @@ also the order of the overview seems wrong*/
 
     checkAnswer();
   }
+}
+
+function generateExponentProblem() {
+  let base = NaN;
+  let power = NaN;
+  const possibleBases = [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const possiblePowers = [0, 1, 2, 2, 2, 2, 3, 3, 4];
+  base = possibleBases[Math.floor(Math.random() * possibleBases.length)];//randomSingleDigit();
+  power = possiblePowers[Math.floor(Math.random() * possiblePowers.length)]; //randomSingleDigit();
+  correctAnswer = base ** power;
+  questionString = `${base} ^ ${power}`;
+  // document.getElementById("question").innerHTML = questionString;
+  display(questionString);
 }
 
 function randomSingleDigit() {
@@ -128,7 +146,7 @@ function generatePercentageProblem() {
   correctAnswer = (a / b) * 100;
   correctAnswer = Math.round(correctAnswer * 1000) / 1000; //round to 3 decimals
   correctAnswer = `${correctAnswer}%`;
-  questionString = `What percentage is ${a} of ${b}?`;
+  questionString = `What percentage is ${a} of ${b}? (__%)`;
 
   // document.getElementById("question").innerHTML = questionString;
   display(questionString, "");
