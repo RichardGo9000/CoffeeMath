@@ -19,7 +19,15 @@ be able to click operators to get assistane in how they work along with helpfull
 
 check for 100,000,000.000 or 100.000.000,000 for american or european decimal notation
 
+check for close answer
+add skip button on 2 wrong tries
 
 
 Improvement ideas: 
 https://codepen.io/ModAbaccus/pen/GRoVXyL
+
+
+bug list
+percent of problems have bad wording
+check button is cut off in vertical mobile view
+mobile version could use smaller font-size
