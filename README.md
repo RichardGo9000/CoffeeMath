@@ -19,6 +19,8 @@ be able to click operators to get assistane in how they work along with helpfull
 
 check for 100,000,000.000 or 100.000.000,000 for american or european decimal notation
 
+add option for nice numbers (require function to produce problems that end in integers or finite decimals less than 3 decimals in length)
+
 check for close answer
 add skip button on 2 wrong tries
 
