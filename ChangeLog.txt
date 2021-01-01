@@ -1,7 +1,0 @@
-CoffeeMath Change Log
-
-v0.0.1 Thursday December 31st 2020 - 
-  What's new:
-    Written in typescript with help from Antonio Bourassa
-  Bug Fixes:
-    Corrected calculation of factorial problems
