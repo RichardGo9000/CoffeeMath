@@ -22,3 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code base rewritten to TypeScript with help from Antonio Bourassa
 ### Fixed
 - Calculation of factorial problems
+
+
+# Project Source Code available at: https://github.com/RichardGo9000/CoffeeMath
