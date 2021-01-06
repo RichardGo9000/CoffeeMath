@@ -8,16 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased 0.0.4]
 ### Added 
 - IndexedDB
+### Fixed
+- button positioning in Edge
 
 ## [Unreleased 0.0.3]
 ### Added 
 - Settings menu card
+- Custom favicon
+### Changed
+- Changed check button to (->) fixing the button squishing in some mobile views
 
 ## [0.0.2] - 2020/1/6
 ### Added 
 - Menu button
-### Fixed
-- Overview card layout for small screens (1/4 pc/laptop screen, cellphone tablet)
 
 ## [Released]
 
