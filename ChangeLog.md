@@ -5,15 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [Unreleased 0.0.4]
+## [Unreleased 0.0.5]
 ### Added 
 - IndexedDB
+
+## [Unreleased 0.0.4]
+### Added 
+- Settings menu card
 ### Fixed
 - button positioning in Edge
 
 ## [Unreleased 0.0.3]
-### Added 
-- Settings menu card
+### Added
 - Custom favicon
 ### Changed
 - Changed check button to (->) fixing the button squishing in some mobile views
