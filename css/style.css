@@ -21,7 +21,6 @@ input {
   padding: 5px 10px;
   background: none;
   background-image: none;
-  /* border: 1px solid #a0b3b0; */
   border: 1px solid #306990;
   
   border-radius: 30px;
@@ -32,22 +31,34 @@ input:focus {
     outline: 0;
     border-color: #1ab188;
 }
+
 .button {
     border: 1px solid #306990;
     outline: none;
-    border-radius: 30px;
+    border-radius: 1000px;
+    width: 40px;
+    height: 40px;
+    /* width: 50px;
+    height: 50px; */
     padding: 7px 0;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .1em;
-    /* background: #1ab188; */
     background: #1e3748;/*#4e617e;#576d8e;#61799e;*/
     color: #ffffff;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     -webkit-appearance: none;
 }
+
+#goArrow {
+  /* background-color: red; */
+  transform: scale(0.6);
+  align-items: center;
+  justify-content: center;
+}
+
 .button:hover, .button:focus {
   background: #179b77;
 }
@@ -73,10 +84,10 @@ input:focus {
 #overview {
   text-align: left;
   font-size: 0.4em;
-  /* margin-top: 40px; */
+  margin-top: 40px;
 }
 #response {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 .red {
   color: #e55659;

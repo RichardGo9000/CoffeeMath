@@ -43,14 +43,29 @@ export class Quiz {
             //could check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
         });
     }
+    //   setupQuestionCard(): void {
+    //     document.getElementById("card").innerHTML = `
+    // <p id="response"></p>
+    // <p id="question"></p>
+    // <div class="f-row">
+    //     <input id="answer" type="text" />
+    //     <input id="submit" class="button" type="button" value="Check"/>
+    // </div>
+    // `;
+    //     this.submitElement = document.getElementById("submit") as HTMLInputElement;
+    //     this.submitElement.addEventListener("click", () => this.submitCard());
+    //     this.questionDisplay = document.getElementById("question");
+    //   }
     setupQuestionCard() {
         document.getElementById("card").innerHTML = `
-<p id="response"></p>
-<p id="question"></p>
-<div class="f-row">
-    <input id="answer" type="text" />
-    <input id="submit" class="button" type="button" value="Check"/>
-</div>
+    <p id="response"></p>
+    <p id="question"></p>
+    <div class="f-row">
+      <input id="answer" type="text" />
+      <button id="submit" type="submit" class="button" name="image"> 
+        <img id="goArrow" type="svg" src="img/goArrowBlue.svg"></img> 
+      </button>
+    </div>
 `;
         this.submitElement = document.getElementById("submit");
         this.submitElement.addEventListener("click", () => this.submitCard());
@@ -63,7 +78,7 @@ export class Quiz {
         else {
             console.log("setting up next card");
             this.answerElement.value = "";
-            this.submitElement.value = "Check"; //change next button to submit button
+            // this.submitElement.value = "Check"; //change next button to submit button
             this.selectRandomProblem();
         }
     }
@@ -84,7 +99,7 @@ export class Quiz {
             "f",
             /*"p",
             "po",*/
-            "e"
+            "e",
         ];
         let random = Math.floor(Math.random() * possibleQuestions.length);
         let nextQuestion = possibleQuestions[random];
@@ -153,9 +168,10 @@ export class Quiz {
         if (submittedAnswer === this.problem.answer) {
             // Correct
             this.responseElement.innerHTML = "Correct";
-            this.submitElement.value = "Next";
+            // this.submitElement.value = "Next";
             this.trackResponse("c");
             this.setupNextCard();
+            //call next random problem
             // this.selectRandomProblem();
             // quiz complete, show overview
             // if (this.questionList.length > this.quizLength) this.showOverview();
@@ -201,15 +217,16 @@ export class Quiz {
         document.getElementById("card").innerHTML = quizOverview;
     }
     submitCard() {
-        if (this.submitElement.value == "Next") {
-            console.log("running this.selectRandomProblem()");
-            this.selectRandomProblem();
-            // randomProblem();
-        }
-        else if (this.submitElement.value == "Check") {
-            console.log("running this.checkAnswer()");
-            this.checkAnswer();
-        }
+        console.log("running this.checkAnswer()");
+        this.checkAnswer();
+        // if (this.submitElement.value == "Next") {
+        //   console.log("running this.selectRandomProblem()");
+        //   this.selectRandomProblem();
+        //   // randomProblem();
+        // } else if (this.submitElement.value == "Check") {
+        //   console.log("running this.checkAnswer()");
+        //   this.checkAnswer();
+        // }
     }
 }
 export default Quiz;
