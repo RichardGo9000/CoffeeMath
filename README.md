@@ -30,7 +30,7 @@ npm run test
 
 ## Author
 
-👤 **richard gorbet**
+👤 **Richard Gorbet**
 
 * Github: [@RichardGo9000](https://github.com/RichardGo9000)
 
