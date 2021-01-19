@@ -1,17 +1,66 @@
+/* Global */
 body {
   background-color: #125480;
   color: #c4d4df;
   font-family: 'Titillium Web', sans-serif;
 }
-p {
-  font-size: 2.4em;
+
+/* Menu Button */
+#menuBtn {
+  float: right;
 }
-.f-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+
+/* Settings Card */
+.settingsCard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(19, 35, 47, 0.9);
+  max-width: 600px;
+  margin: 40px auto;
+  margin-top: 50px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #306990;
+  border-radius: 20px;
+  text-align: left;
+  padding: 1%;
 }
-input {
+
+.settings .row {  /*may be merged with .f-row under global*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.settingsCard select {
+  width: 2.4rem;
+}
+
+.settingsHeader {
+  font-weight: 800;
+}
+
+/* Question Card */
+.questionCard {
+  background-color: rgba(19, 35, 47, 0.9);
+  max-width: 600px;
+  margin: 40px auto;
+  margin-top: 50px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #306990;
+  border-radius: 20px;
+  text-align: center;
+  padding: 1%;
+}
+
+.questionCard input {
   background-color: #4d7fa0;
   color: #ffffff;
   font-size: 22px;
@@ -27,53 +76,65 @@ input {
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
-input:focus {
-    outline: 0;
-    border-color: #1ab188;
+
+.questionCard input:focus {
+  outline: 0;
+  border-color: #1ab188;
 }
 
-.button {
-    border: 1px solid #306990;
-    outline: none;
-    border-radius: 1000px;
-    width: 40px;
-    height: 40px;
-    /* width: 50px;
-    height: 50px; */
-    padding: 7px 0;
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    background: #1e3748;/*#4e617e;#576d8e;#61799e;*/
-    color: #ffffff;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    -webkit-appearance: none;
+.questionCard .button {
+  border: 1px solid #306990;
+  outline: none;
+  border-radius: 1000px;
+  width: 40px;
+  height: 40px;
+  padding: 7px 0;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1e3748;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
 }
 
-#goArrow {
+.questionCard #goArrow {
   /* background-color: red; */
   transform: scale(0.6);
   align-items: center;
   justify-content: center;
 }
 
-.button:hover, .button:focus {
+.questionCard .button:hover, .button:focus {
   background: #179b77;
 }
-.button-block {
+.questionCard .button-block {
     display: block;
     width: 40%;
 }
-#card {
+
+.questionCard .f-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.questionCard p {
+  font-size: 2.4em;
+}
+
+/* Overview Card */
+.overviewCard {
   background-color: rgba(19, 35, 47, 0.9);
   max-width: 600px;
   margin: 40px auto;
   margin-top: 50px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   position: absolute;
-  top: 20%;
+  /* top: 20%; */
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid #306990;
@@ -81,6 +142,11 @@ input:focus {
   text-align: center;
   padding: 1%;
 }
+
+.overviewCard p {
+  font-size: 1.35em;
+}
+
 #overview {
   text-align: left;
   font-size: 0.4em;
@@ -96,22 +162,6 @@ input:focus {
   color: #08f908;
   font-weight: bold;
 }
-.settings {
-  text-align: right;
-}
-#settings {
-  font-size: 1.4em;
-}
-#settings:hover {
-  color: #1ab188;
-  /* line-height: 20em; */
-  font-size: 1.5em;
-}
-h1 {
-  text-align: center;
-  font-size: 4em;
-}
 
-#menuBtn {
-  float: right;
-}
+
+/* ORIGINAL CODE */

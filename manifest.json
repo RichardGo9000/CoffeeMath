@@ -1,7 +1,7 @@
 {
   "name": "CoffeeMath",
   "short_name": "CoffeeMath",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dynamic math quiz to strengthen mathematical skills and to exercise cognitive skills.",
   "start_url": "/",
   "background_color": "#ffffff",

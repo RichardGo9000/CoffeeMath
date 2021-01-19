@@ -29,6 +29,7 @@ export class Quiz {
   private responseElement: null | HTMLInputElement;
   private submitElement: null | HTMLInputElement;
   private problem: Problems;
+  // private menuOpen: boolean;
 
   constructor() {
     this.quizLength = 10;
@@ -44,6 +45,7 @@ export class Quiz {
     this.responseElement = null;
     this.submitElement = null;
     this.problem = null;
+    // this.menuOpen = false;
   }
 
   init(): void {
@@ -70,35 +72,126 @@ export class Quiz {
     });
   }
 
-  //   setupQuestionCard(): void {
-  //     document.getElementById("card").innerHTML = `
-  // <p id="response"></p>
-  // <p id="question"></p>
-  // <div class="f-row">
-  //     <input id="answer" type="text" />
-  //     <input id="submit" class="button" type="button" value="Check"/>
-  // </div>
-  // `;
-  //     this.submitElement = document.getElementById("submit") as HTMLInputElement;
-  //     this.submitElement.addEventListener("click", () => this.submitCard());
-  //     this.questionDisplay = document.getElementById("question");
-  //   }
-
   setupQuestionCard(): void {
     document.getElementById("card").innerHTML = `
-    <p id="response"></p>
-    <p id="question"></p>
-    <div class="f-row">
-      <input id="answer" type="text" />
-      <button id="submit" type="submit" class="button" name="image"> 
-        <img id="goArrow" type="svg" src="img/goArrowBlue.svg"></img> 
-      </button>
+    <div id="questionCard" class="questionCard">
+      <p id="response"></p>
+      <p id="question"></p>
+      <div class="f-row">
+        <input id="answer" type="text" autoComplete="off" />
+        <button id="submit" type="submit" class="button" name="image"> 
+          <img id="goArrow" type="svg" src="img/goArrowBlue.svg"></img> 
+        </button>
+      </div>
     </div>
 `;
     this.submitElement = document.getElementById("submit") as HTMLInputElement;
     this.submitElement.addEventListener("click", () => this.submitCard());
     this.questionDisplay = document.getElementById("question");
+
+    this.submitElement = document.getElementById("menuBtn") as HTMLInputElement;
+    this.submitElement.addEventListener("click", () => this.settingsCard());
   }
+
+  settingsCard(): void {
+    //display settings card when clicked
+    console.log("Opening Settings Card");
+
+/*
+  <div class="settingsCard" id="editSettings">
+    <h2>Settings</h2>
+    <div class="row">
+      <select id="length">
+        <option value="3">3</option>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+      <label for="length"> questions</label>
+    </div>
+*/
+    
+    document.getElementById("card").innerHTML = `
+    <div class="settingsCard" id="editSettings">
+    <h2>Settings</h2>
+    
+    <div class="row">
+      <select id="length">
+        <option value="3">3</option>
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+      <label for="length"> questions</label>
+    </div>
+
+    <br />
+
+    <div id="topics">
+      <!--<label for="topics" class="settingsHeader">Topics</label>-->
+
+      <div class="checkbox" id="additionBox">
+        <input type="checkbox" value="checked" id="addition" name="topics" checked>
+        <label for="addition">Addition</label>
+      </div>
+
+      <div class="checkbox" id="subtractionBox">
+        <input type="checkbox" value="checked" id="subtraction" name="topics" checked>
+        <label for="subtraction">Subtraction</label>
+      </div>
+
+      <div class="checkbox" id="divisionBox">
+        <input type="checkbox" value="checked" id="division" name="topics" checked>
+        <label for="division">Division</label>
+      </div>
+
+      <div class="checkbox" id="multiplicationBox">
+        <input type="checkbox" value="checked" id="multiplication" name="topics" checked>
+        <label for="multiplication">Multiplication</label>
+      </div>
+      
+      <div class="checkbox" id="factorialBox">
+        <input type="checkbox" value="checked" id="factorial" name="topics" checked>
+        <label for="factorial">Factorial</label>
+      </div>
+      
+      <div class="checkbox" id="exponentBox">
+        <input type="checkbox" value="checked" id="exponent" name="topics" checked>
+        <label for="exponent">Exponent</label>
+      </div>      
+
+    </div>
+    <br />
+  </div>
+    `;
+  }
+  //a:addition, 
+  // s: subtraction
+  // d: division
+  // m: multiplication
+  // f: factorial 
+  // e: exponent
+
+  /*
+    settingsCard(): void {
+    //display settings card when clicked
+    console.log("Opening Settings Card");
+
+    document.getElementById("card").innerHTML = `
+  <div class="settingsCard" id="editSettings">
+    <h2>Settings</h2>
+    <label for="length">Length</label><input id="length" type="number" /><br />
+    <div class="checkbox" id="additionBox">
+      <input type="checkbox" value="checked" id="addition" name="topics" checked><label for="addition">Addition</label>
+    </div>
+    <div class="checkbox" id="subtractionBox">
+      <input type="checkbox" value="checked" id="subtraction" name="topics" checked><label for="subtraction">Subtraction</label>
+    </div>
+    <br />
+  </div>
+    `;
+  }
+  */
 
   setupNextCard(): void {
     if (this.questionList.length === this.quizLength) {
@@ -115,11 +208,6 @@ export class Quiz {
     //a:addition, s:subtraction, d:division, m:multiplication, f:factorial, p:percentage, po:percent of, e:exponent
     type QuestionAbbreviations = "a" | "s" | "d" | "m" | "f" | "p" | "e";
     type PossibleQuestions = Array<QuestionAbbreviations>;
-
-    //select the answer field and reset to blank
-    // document.getElementById("answer").innerHTML = "";
-    // this.setupQuestionCard();
-    // document.getElementById("card").textContent = "";
 
     const possibleQuestions: PossibleQuestions = [
       "a",
@@ -195,15 +283,6 @@ export class Quiz {
     this.questionNumber++;
   }
 
-  /*
-const places = textInput.split('.');
-if (places.length > 1){
-  parseFloat(textInput)
-} else {
-  parseInt(textInput, 10)
-}
-*/
-
   checkAnswer(): void {
     // let submittedAnswer: string = this.answerElement.value;
     let submittedAnswer: number = parseFloat(this.answerElement.value);
@@ -218,13 +297,6 @@ if (places.length > 1){
       // this.submitElement.value = "Next";
       this.trackResponse("c");
       this.setupNextCard();
-
-
-      //call next random problem
-      // this.selectRandomProblem();
-
-      // quiz complete, show overview
-      // if (this.questionList.length > this.quizLength) this.showOverview();
     } else {
       // Incorrect
       this.responseElement.innerHTML = "Incorrect, give it another try!";
@@ -260,7 +332,7 @@ if (places.length > 1){
     });
     let percentCorrect: number = (correctCount / this.quizLength) * 100;
     quizOverview = `<h1>${percentCorrect}%</h1>` + quizOverview;
-    quizOverview = `<div id="overview">
+    quizOverview = `<div class="overviewCard" id="overview">
           ${quizOverview}
           </div>`;
     document.getElementById("card").innerHTML = quizOverview;
@@ -269,14 +341,6 @@ if (places.length > 1){
   submitCard(): void {
     console.log("running this.checkAnswer()");
     this.checkAnswer();
-    // if (this.submitElement.value == "Next") {
-    //   console.log("running this.selectRandomProblem()");
-    //   this.selectRandomProblem();
-    //   // randomProblem();
-    // } else if (this.submitElement.value == "Check") {
-    //   console.log("running this.checkAnswer()");
-    //   this.checkAnswer();
-    // }
   }
 }
 

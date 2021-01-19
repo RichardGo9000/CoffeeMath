@@ -15,6 +15,7 @@ export declare class Quiz {
     constructor();
     init(): void;
     setupQuestionCard(): void;
+    settingsCard(): void;
     setupNextCard(): void;
     selectRandomProblem(): void;
     checkAnswer(): void;
