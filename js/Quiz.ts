@@ -29,7 +29,10 @@ export class Quiz {
   private responseElement: null | HTMLInputElement;
   private submitElement: null | HTMLInputElement;
   private problem: Problems;
-  // private menuOpen: boolean;
+  private questionCardContent: string;
+  private menuOpen: boolean;
+  
+// const questionCategories: Array<Problems> = ['addition'|'subtraction'|'multiplication']
 
   constructor() {
     this.quizLength = 10;
@@ -45,7 +48,7 @@ export class Quiz {
     this.responseElement = null;
     this.submitElement = null;
     this.problem = null;
-    // this.menuOpen = false;
+    this.menuOpen = false;
   }
 
   init(): void {
@@ -72,7 +75,29 @@ export class Quiz {
     });
   }
 
-  setupQuestionCard(): void {
+  toggleMenu(): void {
+    if (this.menuOpen) {
+      this.closeMenu();
+      this.menuOpen = false;
+    } else {
+      this.openMenu();
+      this.menuOpen = true;
+    }
+  }
+
+  openMenu(): void {
+    console.log("Opening Menu");
+    this.settingsCard();
+  }
+
+  closeMenu(): void {
+    console.log("Closing Menu");
+    location.reload();
+    //display existing card or refresh page if settings change
+  }
+
+
+  setQuestionCard(): void {
     document.getElementById("card").innerHTML = `
     <div id="questionCard" class="questionCard">
       <p id="response"></p>
@@ -83,14 +108,22 @@ export class Quiz {
           <img id="goArrow" type="svg" src="img/goArrowBlue.svg"></img> 
         </button>
       </div>
-    </div>
-`;
+    </div>`;
+  }
+
+  resetQuestionCard(): void {
+    this.setQuestionCard();
+  }
+
+  setupQuestionCard(): void {
+    this.resetQuestionCard();
     this.submitElement = document.getElementById("submit") as HTMLInputElement;
     this.submitElement.addEventListener("click", () => this.submitCard());
     this.questionDisplay = document.getElementById("question");
 
     this.submitElement = document.getElementById("menuBtn") as HTMLInputElement;
-    this.submitElement.addEventListener("click", () => this.settingsCard());
+    this.submitElement.addEventListener("click", () => this.toggleMenu());
+    // this.submitElement.addEventListener("click", () => this.settingsCard());
   }
 
   settingsCard(): void {
@@ -165,33 +198,6 @@ export class Quiz {
   </div>
     `;
   }
-  //a:addition, 
-  // s: subtraction
-  // d: division
-  // m: multiplication
-  // f: factorial 
-  // e: exponent
-
-  /*
-    settingsCard(): void {
-    //display settings card when clicked
-    console.log("Opening Settings Card");
-
-    document.getElementById("card").innerHTML = `
-  <div class="settingsCard" id="editSettings">
-    <h2>Settings</h2>
-    <label for="length">Length</label><input id="length" type="number" /><br />
-    <div class="checkbox" id="additionBox">
-      <input type="checkbox" value="checked" id="addition" name="topics" checked><label for="addition">Addition</label>
-    </div>
-    <div class="checkbox" id="subtractionBox">
-      <input type="checkbox" value="checked" id="subtraction" name="topics" checked><label for="subtraction">Subtraction</label>
-    </div>
-    <br />
-  </div>
-    `;
-  }
-  */
 
   setupNextCard(): void {
     if (this.questionList.length === this.quizLength) {
@@ -203,6 +209,34 @@ export class Quiz {
       this.selectRandomProblem();
     }
   }
+
+  selectProblem(): void {
+
+  }
+
+  // showProblem(): void {
+
+  // }
+
+
+  /*
+  type qCategories = 'addition'|'subtraction'|'multiplication'
+const questionCategories: Array<qCategories> = ['addition'|'subtraction'|'multiplication']
+showProblem(topicStr: string, debug = false): void {
+if (!questionCategories.includes(topicStr)){
+    if (debug){
+        throw new Error(`You must use one of the coded categories: ${questionCategories.join(', ')}
+    } else {
+        topicStr = questionCategories[0]
+    } 
+}
+}
+  */
+
+
+  // showProblem(topicStr: string): void {
+  //   if (!questionCategories.includes(topicStr)) topicStr = questionCategories[0]
+  // }
 
   selectRandomProblem(): void {
     //a:addition, s:subtraction, d:division, m:multiplication, f:factorial, p:percentage, po:percent of, e:exponent

@@ -6,7 +6,7 @@ import FactorialProblem from "./problems/Factorial.js";
 import PercentageProblem from "./problems/Percentage.js";
 import ExponentProblem from "./problems/Exponent.js";
 export class Quiz {
-    // private menuOpen: boolean;
+    // const questionCategories: Array<Problems> = ['addition'|'subtraction'|'multiplication']
     constructor() {
         this.quizLength = 10;
         this.correctAnswer = NaN;
@@ -21,7 +21,7 @@ export class Quiz {
         this.responseElement = null;
         this.submitElement = null;
         this.problem = null;
-        // this.menuOpen = false;
+        this.menuOpen = false;
     }
     init() {
         this.setupQuestionCard();
@@ -45,7 +45,26 @@ export class Quiz {
             //could check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
         });
     }
-    setupQuestionCard() {
+    toggleMenu() {
+        if (this.menuOpen) {
+            this.closeMenu();
+            this.menuOpen = false;
+        }
+        else {
+            this.openMenu();
+            this.menuOpen = true;
+        }
+    }
+    openMenu() {
+        console.log("Opening Menu");
+        this.settingsCard();
+    }
+    closeMenu() {
+        console.log("Closing Menu");
+        location.reload();
+        //display existing card or refresh page if settings change
+    }
+    setQuestionCard() {
         document.getElementById("card").innerHTML = `
     <div id="questionCard" class="questionCard">
       <p id="response"></p>
@@ -56,13 +75,19 @@ export class Quiz {
           <img id="goArrow" type="svg" src="img/goArrowBlue.svg"></img> 
         </button>
       </div>
-    </div>
-`;
+    </div>`;
+    }
+    resetQuestionCard() {
+        this.setQuestionCard();
+    }
+    setupQuestionCard() {
+        this.resetQuestionCard();
         this.submitElement = document.getElementById("submit");
         this.submitElement.addEventListener("click", () => this.submitCard());
         this.questionDisplay = document.getElementById("question");
         this.submitElement = document.getElementById("menuBtn");
-        this.submitElement.addEventListener("click", () => this.settingsCard());
+        this.submitElement.addEventListener("click", () => this.toggleMenu());
+        // this.submitElement.addEventListener("click", () => this.settingsCard());
     }
     settingsCard() {
         //display settings card when clicked
@@ -134,32 +159,6 @@ export class Quiz {
   </div>
     `;
     }
-    //a:addition, 
-    // s: subtraction
-    // d: division
-    // m: multiplication
-    // f: factorial 
-    // e: exponent
-    /*
-      settingsCard(): void {
-      //display settings card when clicked
-      console.log("Opening Settings Card");
-  
-      document.getElementById("card").innerHTML = `
-    <div class="settingsCard" id="editSettings">
-      <h2>Settings</h2>
-      <label for="length">Length</label><input id="length" type="number" /><br />
-      <div class="checkbox" id="additionBox">
-        <input type="checkbox" value="checked" id="addition" name="topics" checked><label for="addition">Addition</label>
-      </div>
-      <div class="checkbox" id="subtractionBox">
-        <input type="checkbox" value="checked" id="subtraction" name="topics" checked><label for="subtraction">Subtraction</label>
-      </div>
-      <br />
-    </div>
-      `;
-    }
-    */
     setupNextCard() {
         if (this.questionList.length === this.quizLength) {
             this.showOverview();
@@ -171,6 +170,26 @@ export class Quiz {
             this.selectRandomProblem();
         }
     }
+    selectProblem() {
+    }
+    // showProblem(): void {
+    // }
+    /*
+    type qCategories = 'addition'|'subtraction'|'multiplication'
+  const questionCategories: Array<qCategories> = ['addition'|'subtraction'|'multiplication']
+  showProblem(topicStr: string, debug = false): void {
+  if (!questionCategories.includes(topicStr)){
+      if (debug){
+          throw new Error(`You must use one of the coded categories: ${questionCategories.join(', ')}
+      } else {
+          topicStr = questionCategories[0]
+      }
+  }
+  }
+    */
+    // showProblem(topicStr: string): void {
+    //   if (!questionCategories.includes(topicStr)) topicStr = questionCategories[0]
+    // }
     selectRandomProblem() {
         const possibleQuestions = [
             "a",
