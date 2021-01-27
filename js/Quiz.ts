@@ -31,6 +31,10 @@ export class Quiz {
   private problem: Problems;
   private questionCardContent: string;
   private menuOpen: boolean;
+
+  // npm install localforage
+  // <script src="localforage/dist/localforage.js"></script>
+  // <script>localforage.getItem('something', myCallback);</script>
   
 // const questionCategories: Array<Problems> = ['addition'|'subtraction'|'multiplication']
 
