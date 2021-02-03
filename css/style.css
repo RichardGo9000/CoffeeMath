@@ -106,11 +106,11 @@ h1 {
 } */
 
 /* Concave *My Favorite* */
-/* .questionCard {
+.questionCard {
 	border-radius: 50px;
 	background: linear-gradient(145deg, #104c73, #135a89);
 	box-shadow:  20px 20px 45px #0f476d, -20px -20px 45px #156193;
-} */
+}
 
 /* Protruding */
 /* .questionCard {
@@ -120,8 +120,8 @@ h1 {
 } */
 
 /* Inset (worst in my opinion) */
-.questionCard {
+/* .questionCard {
 	border-radius: 50px;
 	background: #125480;
 	box-shadow: inset 20px 20px 45px #0f476d, inset -20px -20px 45px #156193;
-}
+} */
