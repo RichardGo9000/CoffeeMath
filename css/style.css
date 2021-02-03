@@ -97,3 +97,31 @@ h1 {
   text-align: center;
   font-size: 4em;
 }
+
+/* Flat */
+/* .questionCard {
+	border-radius: 50px;
+	background: #125480;
+	box-shadow:  20px 20px 45px #0f476d, -20px -20px 45px #156193;
+} */
+
+/* Concave *My Favorite* */
+.questionCard {
+	border-radius: 50px;
+	background: linear-gradient(145deg, #104c73, #135a89);
+	box-shadow:  20px 20px 45px #0f476d, -20px -20px 45px #156193;
+}
+
+/* Protruding */
+/* .questionCard {
+	border-radius: 50px;
+	background: linear-gradient(145deg, #135a89, #104c73);
+	box-shadow:  20px 20px 45px #0f476d, -20px -20px 45px #156193;
+} */
+
+/* Inset (worst in my opinion) */
+/* .questionCard {
+	border-radius: 50px;
+	background: #125480;
+	box-shadow: inset 20px 20px 45px #0f476d, inset -20px -20px 45px #156193;
+} */
