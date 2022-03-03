@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#125480">
+    <link rel="manifest" href="manifest.webmanifest">
+    <!-- <link rel="manifest" href="manifest.json"> -->
+
+    <!-- create dedicated coffeemath icons and include them in index.html, serviceworker, and manifest -->
+    <!-- favicon may be the only icons that need to be linked directly from index.html -->
+    <!-- the rest of the icons should probably be included in the manifest only -->
+    <!-- favicon.ico -->
+    <!-- maskable icon much be included in manifest -->
+
+    <!-- <meta name="msapplication-square70x70logo" content="/img/ms-tile-CM-small.png" /> -->
+    <!-- <meta name="msapplication-square150x150logo" content="/img/ms-tile-CM-medium.png" /> -->
+    <!-- <meta name="msapplication-wide310x150logo" content="/img/ms-tile-CM-wide.png" /> -->
+    <!-- <meta name="msapplication-square310x310logo" content="/img/ms-tile-CM-large.png" /> -->
+
+    <!-- <link rel="icon" type="image/png" href="img/favicon-16.png" sizes="16x16" /> -->
+    <!-- <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32" /> -->
+    <!-- <link rel="icon" type="image/png" href="img/favicon-96.png" sizes="96x96" /> -->
+
+    <!-- Apple touch icons should not be transparent -->
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-152.png" sizes="152x152" /> -->
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-167.png" sizes="167x167" /> -->
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-180.png" sizes="180x180" /> -->
+    <link rel="icon" type="image/png" href="img/CM-192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="img/CM-512.png" sizes="512x512" />
+
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <title>Simple PWA</title>
+</head>
+
+<body>
+    <!-- <p>Please enable Javascript to use this application.</p> -->
+    <!-- Link to a version that uses node on the server and only html/css on client side -->
+    <!-- <a href="#">Begin HTML only version</a> -->
+
+    <!-- make this position absolute so it doesnt scroll -->
+    <!-- <input id="settingsBtn" type="image" src="img/gear.png" alt="settings" /> -->
+
+    <!-- <label id="settingsBtn">
+        <img  type="image" src="img/gear.png" alt="settings" />
+        <input id="settingsCheckbox" type="checkbox" checked="checked">
+    </label> -->
+
+    <input id="settingsCheckbox" type="checkbox" checked="checked">
+    <label for="settingsCheckbox" id="settingsBtn">
+        <img type="image" src="img/gear.png" alt="settings" />
+    </label>
+
+    <!-- <a id="linkBtn" href="#">Start Quiz</a> -->
+
+    <div id="app">
+        <p id="question">1 + 1</p>
+        <input id="answer" type="text" />
+    </div>
+
+
+    <!-- <div class="report" id="app">
+        <h1>90%</h1>
+            <p><span class="green">✓</span> 1) 14 / 1 = 14</p>
+            <p><span class="green">✓</span> 2) 65 / 5 = 13</p>
+            <p><span class="green">✓</span> 3) 0 ^ 0 = 1</p>
+            <p><span class="green">✓</span> 4) 6 ^ 0 = 1</p>
+            <p><span class="red">x&nbsp;&nbsp;</span>5) 79 / 7 = 11.286</p>
+            <p><span class="green">✓</span> 6) 95 - 11 = 84</p>
+            <p><span class="green">✓</span> 7) 6! = 720</p>
+            <p><span class="green">✓</span> 8) 2 ^ 4 = 16</p>
+            <p><span class="green">✓</span> 9) 7 x 38 = 266</p>
+            <p><span class="green">✓</span> 10) 46 - 20 = 26</p>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="settingsCard">
+        <h4>Topics</h4>
+        <label class="checkboxContainer">Addition
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Subtration
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Multiplication
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Division
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Factorial
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="checkboxContainer">Percentage
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Exponent
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Negatives
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Fractions
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Decimals
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Logarithms
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+
+        <h4>Options</h4>
+        <label class="checkboxContainer">Time Responses
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Topic Probability
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkboxContainer">Install
+            <input class="installBtn" type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Font Size
+            <select id="font-size" name="font-size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </label>
+        <label class="container">Quiz Length
+            <input id="quizLength" type="number" value="10" />
+        </label>
+        <label class="container">Difficulty
+            <select id="difficulty" name="difficulty">
+                <option value="easy">Easy</option>
+                <option value="moderate">Moderate</option>
+                <option value="hard">Hard</option>
+            </select>
+        </label>
+    </div>
+
+    <script type="module" src="index.js"></script> 
+
+</body>
+
+</html>

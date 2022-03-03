@@ -1,0 +1,221 @@
+/* use vars to simplify the color scheme */
+/* use imports to separate different catagories of stylings  settings, question, report */
+/* create a lightmode that is light blue and a darkmode */
+/* fix the settings gear double click issue with the css general sibling combinator ~*/
+/* change the onselect and (possibly) hover styleing to blue red and green instead of default */
+
+body {
+    background-color: #125480;
+    color: #c4d4df;
+    /* margin-top: 17vh; */
+    margin-top: 10vh;
+    font-size: 1.8em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#settingsCard {
+    font-size: 0.7em;
+    text-align: left;
+    margin-top: 17vh;
+    width: 11em;
+    margin: auto;
+    display: none;
+}
+
+/* change color of the selected input box*/
+/* questionCard */
+/* #app {
+    margin-top: 17vh;
+    text-align: center;
+    display: none;
+}
+
+.report {
+    text-align: left !important;
+    font-size: 0.9em;
+}
+.report h1 {
+    margin-left: 40vw;
+}
+.report p {
+    margin-left: 38vw;
+    padding: 0;
+} */
+
+#app {
+    margin-top: 17vh;
+    text-align: center;
+    display: none;
+}
+
+.overviewCard {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+#overviewCard p {
+    padding: 0;
+}
+
+/*this will be added to settings menu styling later*/
+#quizLength {
+    width: 4vh;
+}
+
+#answer {
+    font-size: 1em;
+    color: #c4d4df;
+    background-color: #4d7fa0;
+    border: 1px solid #a0b3b0;
+    border-radius: 30px;
+    padding: .2%;
+    padding-left: 1.4%;
+    width: 40vh;
+    width: 7em;
+}
+
+.correctAnswer {
+    color: #0d4106 !important;
+    background-color: #bcf5bc !important;
+}
+
+.incorrectAnswer {
+    color: #9f0000 !important;
+    background-color: #ff6766 !important;
+}
+
+#settingsBtn {
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+    /* uncomment for javascript to show this element */
+    /* display: none; */
+}
+
+/* #settingsCheckbox:checked ~ #questionCard { */
+#settingsCheckbox:checked ~ #app {
+    display: block;
+}
+/* #settingsCheckbox ~ #questionCard { */
+#settingsCheckbox ~ #app {    
+    display: none;
+}
+#settingsCheckbox:checked ~ #settingsCard {
+    display: none;
+}
+#settingsCheckbox ~ #settingsCard {
+    display: block;
+}
+
+/*Settings Style*/
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    /* padding-left: 35px; */
+    margin-bottom: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkboxContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox*/
+.checkboxContainer input {
+    position: ablsolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+#settingsCheckbox {
+    position: ablsolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 2px solid #c4d4df;
+    border-radius: 4px;
+    background-color: #125480;
+}
+
+/* When checkbox is checked add a light blue background */
+.checkboxContainer input:checked~.checkmark {
+    background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkboxContainer input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkboxContainer .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #c4d4df;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input[type=number] {
+    color: #c4d4df;
+    border: 2px solid #c4d4df;
+    border-radius: 30px;
+    padding-left: 0.5em;
+    background-color: #4d7fa0;
+    /* width: 120em; */
+}
+
+select {
+    color: #c4d4df;
+    border: 2px solid #c4d4df;
+    border-radius: 30px;
+    padding-left: 1em;
+    background-color: #4d7fa0;
+}
+
+#linkBtn {
+    font-size: 1em;
+    color: #c4d4df;
+    background-color: #4d7fa0;
+    border: 1px solid #a0b3b0;
+    border-radius: 30px;
+    text-decoration: none;  
+    padding: 1%;  
+    margin-left: 35vw;
+}
+
+
