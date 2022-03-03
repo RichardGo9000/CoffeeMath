@@ -25,6 +25,7 @@ create a html only version that only sends queries to a server for clients witho
 - [ ] add link from each question to a view that details more information about the question and what was wrong with the answer
 - [ ] make it so each part of the question can be hovered over to present a hint or description of what is going on in this part of the problem
 - [ ] make it add a lesson component that explains each concept in more detail, this should start out as a text description with animated examples
+- [ ] get elements of overview card to line up in the center ov the screen instead of each being centered on their own
 
 Subjects to add:
 - [ ] percentile
