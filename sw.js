@@ -1,11 +1,9 @@
 //caches files
-/* find a more robust way of caching files that doesn't fail if one file is unavailable */
+
 console.log('Service Worker Active');
 
-// 'js/index.js',
 self.addEventListener('install', (e) => {
     e.waitUntil(
-        //  'js/index.js',
         caches.open('CoffeeCache').then((cache) => cache.addAll([
             'index.html',
             'index.js',
