@@ -6,10 +6,7 @@ import FactorialProblem from "./problems/Factorial.js";
 import PercentageProblem from "./problems/Percentage.js";
 import ExponentProblem from "./problems/Exponent.js";
 export class Quiz {
-    // npm install localforage
-    // <script src="localforage/dist/localforage.js"></script>
-    // <script>localforage.getItem('something', myCallback);</script>
-    // const questionCategories: Array<Problems> = ['addition'|'subtraction'|'multiplication']
+
     constructor() {
         this.quizLength = 10;
         this.correctAnswer = NaN;
