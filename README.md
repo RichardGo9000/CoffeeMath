@@ -36,6 +36,7 @@ Javascript Improvements
 HTML Improvements
 - [ ] add custom icons
 - [ ] create a link to an http only version of the app that does not require client side javascript (probably a node application on the server)
+- [ ] Add invisible label to answer box indicate use to screen readers
 
 
 CSS Improvements
