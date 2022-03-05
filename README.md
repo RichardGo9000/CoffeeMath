@@ -11,26 +11,29 @@ clean up code base
 
 
 To Do:
-create a html only version that only sends queries to a server for clients without javascript
+Javascript Improvements
 - [ ] CLEAN UP CODE BASE
 - [ ] add uninstall function when install option is unchecked
-- [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] localforage to store settings & history
 - [ ] shake answer for a couple seconds to indicate wrong answer
 - [ ] turn answer red until changed to indicate a wrong response and prevent answer submision until answer changed
 - [ ] add snackbar feedback and encouragement https://www.w3schools.com/howto/howto_js_snackbar.asp
-- [ ] change the onselect and (possibly) hover styleing to blue red and green instead of default
-- [ ] use css vars to simplify the color scheme
-- [ ] add custom icons
 - [ ] add link from each question to a view that details more information about the question and what was wrong with the answer
 - [ ] make it so each part of the question can be hovered over to present a hint or description of what is going on in this part of the problem
 - [ ] make it add a lesson component that explains each concept in more detail, this should start out as a text description with animated examples
 - [ ] get elements of overview card to line up in the center ov the screen instead of each being centered on their own
-- [ ] create a link to an http only version of the app that does not require client side javascrit=pt (probably a node application on the server)
-- [x] link to http only version should be default and gear should be revealed by javascript
+- [ ] link to http only version should be default and gear should be revealed by javascript
 - [ ] have setOverviewCard() add the overview class to app div, then remove it to show next quiz
 - [ ] add ability to move to another quiz from the overview card
 - [ ] find a more robust way of caching files that doesn't fail if one file is unavailable 
+HTML Improvements
+- [ ] add custom icons
+- [ ] create a link to an http only version of the app that does not require client side javascript (probably a node application on the server)
+CSS Improvements
+- [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
+- [ ] use css vars to simplify the color scheme
+- [ ] use css imports to separate stylesheet into multiple stylesheets to increas readability
+- [ ] change the onselect and (possibly) hover styleing to blue red and green instead of default
 
 Subjects to add:
 - [ ] percentile
