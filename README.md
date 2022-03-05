@@ -28,6 +28,9 @@ Javascript Improvements
 - [ ] have setOverviewCard() add the overview class to app div, then remove it to show next quiz
 - [ ] add ability to move to another quiz from the overview card
 - [ ] find a more robust way of caching files that doesn't fail if one file is unavailable 
+- [ ]  check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
+- [ ]  inject questionCard and overviewcard into app div with the setupQuestionCard() and setupOverviewCard() respectively
+- [ ]  add class correctAnswer or incorrectAnswer repectively to input box until answer changes
 
 
 HTML Improvements
@@ -40,6 +43,7 @@ CSS Improvements
 - [ ] use css vars to simplify the color scheme
 - [ ] use css imports to separate stylesheet into multiple stylesheets to increas readability
 - [ ] change the onselect and (possibly) hover styleing to blue red and green instead of default
+- [ ] create a lightmode that is light blue and a darkmode
 
 Subjects to add:
 - [ ] percentile
