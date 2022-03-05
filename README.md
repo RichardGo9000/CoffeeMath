@@ -30,6 +30,7 @@ create a html only version that only sends queries to a server for clients witho
 - [x] link to http only version should be default and gear should be revealed by javascript
 - [ ] have setOverviewCard() add the overview class to app div, then remove it to show next quiz
 - [ ] add ability to move to another quiz from the overview card
+- [ ] find a more robust way of caching files that doesn't fail if one file is unavailable 
 
 Subjects to add:
 - [ ] percentile
