@@ -4,14 +4,12 @@ export class FactorialProblem extends Problem {
     constructor() {
         super();
     }
-    //factorial needs to be multiplication not addition 4! = 24 and not 10
+
     mathFn() {
         let n = this.randomSingleDigit();
         let numberArray = [];
         this.answer = 1;
         for (let i = n; i > 0; i--) {
-            // this.answer += i;
-            // this.answer *= i;
             if (i != 0) {
                 this.answer *= i;
             }
