@@ -26,7 +26,7 @@ if ('serviceWorker' in navigator) {
         });
 }
 
-// handle install prompt
+// Handle Install Prompt
 let deferredPrompt;
 const addBtn = document.querySelector('.installBtn');//refactor to install button
 
