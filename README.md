@@ -26,6 +26,10 @@ create a html only version that only sends queries to a server for clients witho
 - [ ] make it so each part of the question can be hovered over to present a hint or description of what is going on in this part of the problem
 - [ ] make it add a lesson component that explains each concept in more detail, this should start out as a text description with animated examples
 - [ ] get elements of overview card to line up in the center ov the screen instead of each being centered on their own
+- [ ] create a link to an http only version of the app that does not require client side javascrit=pt (probably a node application on the server)
+- [x] link to http only version should be default and gear should be revealed by javascript
+- [ ] have setOverviewCard() add the overview class to app div, then remove it to show next quiz
+- [ ] add ability to move to another quiz from the overview card
 
 Subjects to add:
 - [ ] percentile
