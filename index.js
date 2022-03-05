@@ -13,14 +13,6 @@ import Quiz from './js/Quiz.js';
 console.log("Calling Quiz()");
 new Quiz().init();
 
-// (() => {
-//     //calling Quiz();
-//     console.log("Calling Quiz()");
-//     new Quiz().init();
-// });
-
-
-
 //PWA Functionality
 //*****************
 
@@ -37,8 +29,6 @@ if ('serviceWorker' in navigator) {
 // handle install prompt
 let deferredPrompt;
 const addBtn = document.querySelector('.installBtn');//refactor to install button
-// add function to check install checkbox when installed and uncheck checkbox when not installed
-// addBtn.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
     //prevent chrom 67 & earlier from automatically showing prompt
