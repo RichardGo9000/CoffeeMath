@@ -1,10 +1,6 @@
 // Main Web App
 //*************
 
-/* add the start point to the CoffeeMath Quiz here and connect to the questionCard */
-/* hook up the settings menu and connect it to quiz app*/
-/* fix the double click settings icon glitch, should only take one click to open settings menu */
-
 console.log('Javascript Active');
 
 // Settings
