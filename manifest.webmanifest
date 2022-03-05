@@ -1,7 +1,9 @@
 {
+    "name": "CoffeeMath",
+    "short_name": "CM",
+    "description": "CoffeeMath v1.1: Daily math practice app",
     "background_color": "#125480",
     "theme_color": "#c4d4df",
-    "description": "A Basic PWA to build CoffeeMathPWA off of.",
     "display": "fullscreen",
     "icons": [
         {
@@ -14,8 +16,6 @@
           "sizes": "512x512",
           "type": "image/png"
         }
-      ],
-      "name": "Simple PWA",
-      "short_name": "PWA",
+      ], 
       "start_url": "index.html"
 }
