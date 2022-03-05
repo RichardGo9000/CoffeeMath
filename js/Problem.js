@@ -25,9 +25,7 @@ export class Problem {
             return number;
         };
     }
-//     display(answerSymbol = " = __") {
-//         document.getElementById("question").innerHTML = this.question + answerSymbol;
-//     }
+
     display(answerSymbol = " = __") {
         document.getElementById("question").innerHTML = this.question;
     }
