@@ -40,6 +40,7 @@ HTML Improvements
 
 CSS Improvements
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
+- [ ] color contrast of 4.5:1 between background color and text color
 - [ ] use css vars to simplify the color scheme
 - [ ] use css imports to separate stylesheet into multiple stylesheets to increas readability
 - [ ] change the onselect and (possibly) hover styleing to blue red and green instead of default
