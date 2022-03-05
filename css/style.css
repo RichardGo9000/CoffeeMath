@@ -215,7 +215,7 @@ select {
     border-radius: 30px;
     text-decoration: none;  
     padding: 1%;
-    text-align: center;
+    text-align: center !imporant;
 /*     margin-left: 35vw; */
 }
 
