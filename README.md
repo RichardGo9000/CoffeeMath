@@ -11,6 +11,8 @@ clean up code base
 
 
 To Do:
+
+
 Javascript Improvements
 - [ ] CLEAN UP CODE BASE
 - [ ] add uninstall function when install option is unchecked
@@ -26,9 +28,13 @@ Javascript Improvements
 - [ ] have setOverviewCard() add the overview class to app div, then remove it to show next quiz
 - [ ] add ability to move to another quiz from the overview card
 - [ ] find a more robust way of caching files that doesn't fail if one file is unavailable 
+
+
 HTML Improvements
 - [ ] add custom icons
 - [ ] create a link to an http only version of the app that does not require client side javascript (probably a node application on the server)
+
+
 CSS Improvements
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] use css vars to simplify the color scheme
