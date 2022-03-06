@@ -26,7 +26,7 @@ export class Quiz {
 
     init() {
     console.log("Quiz init function called");
-//         this.setupQuestionCard();
+        this.setupQuestionCard();
         this.selectRandomProblem();
         this.answerElement = document.getElementById("answer");
 
@@ -49,8 +49,9 @@ export class Quiz {
     }
     
     setQuestionCard() {
-        document.getElementById("question").innerHTML = ```<p id="question">1 + 1</p>
-        <input id="answer" type="text" />```;
+//         document.getElementById("app").innerHTML = ```<p id="question">1 + 1</p>
+//         <input id="answer" type="text" />```;
+        document.getElementById("app").innerHTML = '<p id="question">1 + 1</p> <input id="answer" type="text" />';
     }
     
     
@@ -60,11 +61,13 @@ export class Quiz {
     
     setupQuestionCard() {
         this.resetQuestionCard();
-        this.submitElement = document.getElementById("submit");
-        this.submitElement.addEventListener("click", () => this.submitCard());
-        this.questionDisplay = document.getElementById("question");
-        this.submitElement = document.getElementById("menuBtn");
-        this.submitElement.addEventListener("click", () => this.toggleMenu());
+//         this.submitElement = document.getElementById("submit");
+//         this.submitElement.addEventListener("click", () => this.submitCard());
+        
+//         this.questionDisplay = document.getElementById("question");
+        
+//         this.submitElement = document.getElementById("menuBtn");
+//         this.submitElement.addEventListener("click", () => this.toggleMenu());
         // this.submitElement.addEventListener("click", () => this.settingsCard());
     }
 
