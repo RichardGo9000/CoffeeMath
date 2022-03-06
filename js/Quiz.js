@@ -49,8 +49,9 @@ export class Quiz {
     }
     
     setQuestionCard() {
-        document.getElementById("app").innerHTML = ```<p id="question">1 + 1</p>
-        <input id="answer" type="text" />```;
+//         document.getElementById("app").innerHTML = ```<p id="question">1 + 1</p>
+//         <input id="answer" type="text" />```;
+        document.getElementById("app").innerHTML = '<p id="question">1 + 1</p> <input id="answer" type="text" />';
     }
     
     
