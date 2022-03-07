@@ -14,7 +14,7 @@ To Do:
 
 
 Javascript Improvements
-- [ ] CLEAN UP CODE BASE
+- [x] CLEAN UP CODE BASE
 - [ ] add uninstall function when install option is unchecked
 - [ ] localforage to store settings & history
 - [ ] shake answer for a couple seconds to indicate wrong answer
@@ -35,8 +35,9 @@ Javascript Improvements
 
 HTML Improvements
 - [ ] add custom icons
-- [ ] create a link to an http only version of the app that does not require client side javascript (probably a node application on the server)
+- [x] create a link to an http only version of the app that does not require client side javascript (probably a node application on the server)
 - [ ] Add invisible label to answer box indicate use to screen readers
+- [ ] create a serverbased version that uses no clientside javascript
 
 
 CSS Improvements
