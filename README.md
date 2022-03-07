@@ -47,6 +47,8 @@ CSS Improvements
 - [ ] use css imports to separate stylesheet into multiple stylesheets to increas readability
 - [ ] change the onselect and (possibly) hover styleing to blue red and green instead of default
 - [ ] create a lightmode that is light blue and a darkmode
+- [ ] add a stylesheet from javascript that contains more advances css 
+- [ ] have a basic css stylesheet in index.html for older browsers
 
 Subjects to add:
 - [ ] percentile
