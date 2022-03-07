@@ -1,7 +1,7 @@
 {
     "name": "CoffeeMath",
     "short_name": "CM",
-    "description": "CoffeeMath v1.1: Daily math practice app",
+    "description": "CoffeeMath v1.2: Daily math practice app",
     "background_color": "#125480",
     "theme_color": "#c4d4df",
     "display": "fullscreen",
