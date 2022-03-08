@@ -41,6 +41,7 @@ HTML Improvements
 
 
 CSS Improvements
+- [ ] https://contrast-ratio.com/
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] color contrast of 4.5:1 between background color and text color
 - [ ] use css vars to simplify the color scheme
