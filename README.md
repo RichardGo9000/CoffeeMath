@@ -65,3 +65,4 @@ Subjects to add:
 - [ ] amatorization
 - [ ] other practical applications
 - [ ] formula trivia
+- [ ] Karatsuba algorithm for multiplying large numbers
