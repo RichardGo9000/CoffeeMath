@@ -1,6 +1,53 @@
+/* :root {
+    --backgroundColor: #125480;
+
+    --textColor: #c4d4df;
+    --inputColor: #4d7fa0;
+    --borderColor: var(--textColor);
+
+    --correctTextColor: #0d4106;
+    --correctInputColor: #bcf5bc;
+    --correctBorderColor: var(--correctTextColor);
+    
+    --incorrectTextColor: #9f0000;
+    --incorrectInputColor: #ff6766;
+    --incorrectBorderColor: var(--incorrectTextColor);
+
+    --checkmarkColor: #eee;
+    --checkBoxCheckedColor: #2196f3;
+} */
+
+/* text to input 4.58:1  text to background 6.69:1
+background: #005777
+text: #ccF1FF
+input: #00719B
+*/
+
+:root {
+    --backgroundColor: #005777;
+
+    --textColor: #ccF1FF;
+    --inputColor: #00719B;
+    --borderColor: var(--textColor);
+
+    --correctTextColor: #0d4106;
+    --correctInputColor: #bcf5bc;
+    --correctBorderColor: var(--correctTextColor);
+    
+    --incorrectTextColor: #9f0000;
+    --incorrectInputColor: #ff6766;
+    --incorrectBorderColor: var(--incorrectTextColor);
+
+    --checkmarkColor: #eee;
+    --checkBoxCheckedColor: #2196f3;
+}
+
+
 body {
-    background-color: #125480;
-    color: #c4d4df;
+    /* background-color: #125480;
+    color: #c4d4df; */
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
     margin-top: 10vh;
     font-size: 1.8em;
     font-family: Arial, Helvetica, sans-serif;
@@ -36,9 +83,9 @@ body {
 
 #answer {
     font-size: 1em;
-    color: #c4d4df;
-    background-color: #4d7fa0;
-    border: 1px solid #a0b3b0;
+    color: var(--textColor);
+    background-color: var(--inputColor);
+    border: 1px solid var(--textColor);
     border-radius: 30px;
     padding: .2%;
     padding-left: 1.4%;
@@ -46,14 +93,15 @@ body {
     width: 7em;
 }
 
+
 .correctAnswer {
-    color: #0d4106 !important;
-    background-color: #bcf5bc !important;
+    color: var(--correctTextColor) !important;
+    background-color: var(--correctInputColor) !important;
 }
 
 .incorrectAnswer {
-    color: #9f0000 !important;
-    background-color: #ff6766 !important;
+    color: var(--incorrectTextColor) !important;
+    background-color: var(--incorrectInputColor) !important;
 }
 
 #settingsBtn {
@@ -120,21 +168,23 @@ body {
 }
 
 /* Create a custom checkbox */
+
+
 .checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee;
-    border: 2px solid #c4d4df;
+    background-color: var(--checkmarkColor);
+    border: 2px solid var(--borderColor);
     border-radius: 4px;
-    background-color: #125480;
+    background-color: var(--backgroundColor);
 }
 
 /* When checkbox is checked add a light blue background */
 .checkboxContainer input:checked~.checkmark {
-    background-color: #2196f3;
+    background-color: var(--checkBoxCheckedColor);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -153,7 +203,7 @@ body {
     top: 2px;
     width: 5px;
     height: 10px;
-    border: solid #c4d4df;
+    border: solid var(--borderColor);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -161,27 +211,27 @@ body {
 }
 
 input[type=number] {
-    color: #c4d4df;
-    border: 2px solid #c4d4df;
+    color: var(--textColor);
+    border: 2px solid var(--borderColor);
     border-radius: 30px;
     padding-left: 0.5em;
-    background-color: #4d7fa0;
+    background-color: var(--inputColor);
     /* width: 120em; */
 }
 
 select {
-    color: #c4d4df;
-    border: 2px solid #c4d4df;
+    color: var(--textColor);
+    border: 2px solid var(--borderColor);
     border-radius: 30px;
     padding-left: 1em;
-    background-color: #4d7fa0;
+    background-color: var(--inputColor);
 }
 
 #linkBtn {
     font-size: 1em;
-    color: #c4d4df;
-    background-color: #4d7fa0;
-    border: 1px solid #a0b3b0;
+    color: var(--textColor);
+    background-color: var(--inputColor);
+    border: 1px solid var(--borderColor);
     border-radius: 30px;
     text-decoration: none;  
     padding: 1%;
