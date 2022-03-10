@@ -65,4 +65,4 @@ Subjects to add:
 - [ ] amatorization
 - [ ] other practical applications
 - [ ] formula trivia
-- [ ] Karatsuba algorithm for multiplying large numbers
+- [ ] Karatsuba algorithm for multiplying large numbers https://getpocket.com/explore/item/mathematicians-discover-the-perfect-way-to-multiply?utm_source=pocket-newtab
