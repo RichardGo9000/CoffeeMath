@@ -31,6 +31,7 @@ Javascript Improvements
 - [ ]  check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
 - [ ]  inject questionCard and overviewcard into app div with the setupQuestionCard() and setupOverviewCard() respectively
 - [ ]  add class correctAnswer or incorrectAnswer repectively to input box until answer changes
+- [ ]  add toast notification https://izitoast.marcelodolza.com/
 
 
 HTML Improvements
