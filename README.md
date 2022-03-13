@@ -19,7 +19,6 @@ Javascript Improvements
 - [ ] localforage to store settings & history
 - [ ] shake answer for a couple seconds to indicate wrong answer
 - [ ] turn answer red until changed to indicate a wrong response and prevent answer submision until answer changed
-- [ ] add snackbar feedback and encouragement https://www.w3schools.com/howto/howto_js_snackbar.asp
 - [ ] add link from each question to a view that details more information about the question and what was wrong with the answer
 - [ ] make it so each part of the question can be hovered over to present a hint or description of what is going on in this part of the problem
 - [ ] make it add a lesson component that explains each concept in more detail, this should start out as a text description with animated examples
@@ -31,8 +30,8 @@ Javascript Improvements
 - [ ]  check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
 - [ ]  inject questionCard and overviewcard into app div with the setupQuestionCard() and setupOverviewCard() respectively
 - [ ]  add class correctAnswer or incorrectAnswer repectively to input box until answer changes
-- [ ]  add toast notification https://izitoast.marcelodolza.com/
-
+- [ ]  add toast notification https://izitoast.marcelodolza.com/ or https://www.w3schools.com/howto/howto_js_snackbar.asp
+- [ ]  import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 
 HTML Improvements
 - [ ] add custom icons
