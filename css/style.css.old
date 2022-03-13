@@ -1,42 +1,47 @@
-/* Light Mode */
-:root {
-    --backgroundColor: hsl(196, 100%, 26%);
+/* :root {
+    --backgroundColor: #125480;
 
-    --textColor:  hsl(196, 100%, 95%);
-    --inputColor:  hsl(196, 100%, 32%);
+    --textColor: #c4d4df;
+    --inputColor: #4d7fa0;
     --borderColor: var(--textColor);
 
-    --correctTextColor: hsl(113, 83%, 14%);
-    --correctInputColor: hsl(113, 74%, 85%);
+    --correctTextColor: #0d4106;
+    --correctInputColor: #bcf5bc;
     --correctBorderColor: var(--correctTextColor);
     
-    --incorrectTextColor: hsl(0, 100%, 21%);
-    --incorrectInputColor: hsl(0, 100%, 70%);
+    --incorrectTextColor: #9f0000;
+    --incorrectInputColor: #ff6766;
     --incorrectBorderColor: var(--incorrectTextColor);
 
-    --checkmarkColor: var(--textColor);
-    --checkBoxCheckedColor: var(--inputColor);
+    --checkmarkColor: #eee;
+    --checkBoxCheckedColor: #2196f3;
+} */
+
+/* text to input 4.58:1  text to background 6.69:1
+background: #005777
+text: #ccF1FF
+input: #00719B
+*/
+
+:root {
+    --backgroundColor: #005777;
+
+    --textColor: #ccF1FF;
+    --inputColor: #00719B;
+    --borderColor: var(--textColor);
+
+    --correctTextColor: #0d4106;
+    --correctInputColor: #bcf5bc;
+    --correctBorderColor: var(--correctTextColor);
+    
+    --incorrectTextColor: #9f0000;
+    --incorrectInputColor: #ff6766;
+    --incorrectBorderColor: var(--incorrectTextColor);
+
+    --checkmarkColor: #eee;
+    --checkBoxCheckedColor: #2196f3;
 }
 
-/* Dark Mode*/
-/* :root {
-    --backgroundColor: hsl(196, 100%, 5%);
-
-    --textColor: hsl(196, 100%, 90%);
-    --inputColor: hsl(196, 100%, 7%);
-    --borderColor: var(--textColor);
-
-    --correctTextColor: hsl(113, 74%, 85%);
-    --correctInputColor:  hsl(113, 83%, 14%);
-    --correctBorderColor: var(--correctTextColor);
-    
-    --incorrectTextColor: hsl(0, 100%, 70%);
-    --incorrectInputColor:  hsl(0, 100%, 21%);
-    --incorrectBorderColor: var(--incorrectTextColor);
-
-    --checkmarkColor: var(--textColor);
-    --checkBoxCheckedColor: var(--inputColor);
-} */
 
 body {
     /* background-color: #125480;
