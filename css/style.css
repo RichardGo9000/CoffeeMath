@@ -1,5 +1,25 @@
-/* Dark Mode*/
+/* Light Mode */
 :root {
+    --backgroundColor: hsl(196, 100%, 26%);
+
+    --textColor:  hsl(196, 100%, 95%);
+    --inputColor:  hsl(196, 100%, 32%);
+    --borderColor: var(--textColor);
+
+    --correctTextColor: hsl(113, 83%, 14%);
+    --correctInputColor: hsl(113, 74%, 85%);
+    --correctBorderColor: var(--correctTextColor);
+    
+    --incorrectTextColor: hsl(0, 100%, 21%);
+    --incorrectInputColor: hsl(0, 100%, 70%);
+    --incorrectBorderColor: var(--incorrectTextColor);
+
+    --checkmarkColor: var(--textColor);
+    --checkBoxCheckedColor: var(--inputColor);
+}
+
+/* Dark Mode*/
+/* :root {
     --backgroundColor: hsl(196, 100%, 5%);
 
     --textColor: hsl(196, 100%, 90%);
@@ -16,7 +36,7 @@
 
     --checkmarkColor: var(--textColor);
     --checkBoxCheckedColor: var(--inputColor);
-}
+} */
 
 body {
     /* background-color: #125480;
