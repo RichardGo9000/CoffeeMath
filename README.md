@@ -30,7 +30,7 @@ Javascript Improvements
 - [ ]  check for alt-tab and ctrl-shift-i here, these keystrokes on difficult questions could indicate cheating.
 - [ ]  inject questionCard and overviewcard into app div with the setupQuestionCard() and setupOverviewCard() respectively
 - [ ]  add class correctAnswer or incorrectAnswer repectively to input box until answer changes
-- [ ]  add toast notification https://izitoast.marcelodolza.com/ or https://www.w3schools.com/howto/howto_js_snackbar.asp
+- [ ]  add toast notification https://izitoast.marcelodolza.com/ 
 - [ ]  import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 
 HTML Improvements
