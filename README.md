@@ -15,6 +15,7 @@ To Do:
 
 Javascript Improvements
 - [x] CLEAN UP CODE BASE
+- [ ] add skip function when submit is entered twice in quick succession
 - [ ] add uninstall function when install option is unchecked
 - [ ] localforage to store settings & history
 - [ ] shake answer for a couple seconds to indicate wrong answer
