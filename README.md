@@ -42,6 +42,7 @@ HTML Improvements
 
 
 CSS Improvements
+move gear icon down a little so its not over the battery icon in mobile while keyboard is up
 - [x] contrast ratio of 4.5:1 https://contrast-ratio.com/
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] color contrast of 4.5:1 between background color and text color
