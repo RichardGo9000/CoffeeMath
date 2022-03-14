@@ -6,7 +6,7 @@ Current State:
 CM is an installable PWA that presents questions from the default subjects list then presents an overview
 
 Next Step:
-clean up code base
+add localforage to store settings
 
 
 
@@ -41,7 +41,7 @@ HTML Improvements
 
 
 CSS Improvements
-- [ ] https://contrast-ratio.com/
+- [x] contrast ratio of 4.5:1 https://contrast-ratio.com/
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] color contrast of 4.5:1 between background color and text color
 - [ ] use css vars to simplify the color scheme
@@ -50,6 +50,12 @@ CSS Improvements
 - [ ] create a lightmode that is light blue and a darkmode
 - [ ] add a stylesheet from javascript that contains more advances css 
 - [ ] have a basic css stylesheet in index.html for older browsers
+
+Content Improvements:
+- [ ] add difficulty level  
+  - [ ] (answer in integers, one half, one quarter,  one decimal place, 2 decimal places 3 decimal places etc)
+  - [ ] begin with small numbers 1-9, then 2 then 3 digit numbers 
+  - [ ] start with positive numbers then include negative numbers
 
 Subjects to add:
 - [ ] percentile
