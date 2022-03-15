@@ -3,11 +3,25 @@
 
 console.log('Javascript Active');
 
-// Settings
+// Set up Settings DB
+const dataLayer = async() => {
+    const coffeeDB = "CoffeeMathDB";
+
+    localforage.setItem('updateLevel', 0);
+
+    let updateLevel = null;
+    updateLevel = await localforage.getItem('updateLevel');
+    console.log(updateLevel);
+}
+
+//IIFE
+(async() => {
+    await dataLayer()
+})()
 
 
 // Present Quiz
-
+import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 import Quiz from './js/Quiz.js';
 
 console.log("Calling Quiz()");
