@@ -3,21 +3,7 @@
 
 console.log('Javascript Active');
 
-// Set up Settings DB
-const dataLayer = async() => {
-    const coffeeDB = "CoffeeMathDB";
 
-    localforage.setItem('updateLevel', 0);
-
-    let updateLevel = null;
-    updateLevel = await localforage.getItem('updateLevel');
-    console.log("Update Level: " + updateLevel);
-}
-
-//IIFE
-(async() => {
-    await dataLayer()
-})()
 
 
 // Present Quiz
@@ -65,3 +51,20 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     });
 });
+
+
+// Set up Settings DB
+const dataLayer = async() => {
+    const coffeeDB = "CoffeeMathDB";
+
+    localforage.setItem('updateLevel', 0);
+
+    let updateLevel = null;
+    updateLevel = await localforage.getItem('updateLevel');
+    console.log("Update Level: " + updateLevel);
+}
+
+//IIFE
+(async() => {
+    await dataLayer()
+})()
