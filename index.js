@@ -11,7 +11,7 @@ const dataLayer = async() => {
 
     let updateLevel = null;
     updateLevel = await localforage.getItem('updateLevel');
-    console.log(updateLevel);
+    console.log("Update Level: " + updateLevel);
 }
 
 //IIFE
