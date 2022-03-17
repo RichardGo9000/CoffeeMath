@@ -73,6 +73,7 @@ body {
 }
 
 #quizLength {
+    /* this should be changed to vw */
     width: 4vh;
 }
 
