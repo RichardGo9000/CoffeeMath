@@ -49,7 +49,7 @@ function enablePWAFunctionality() {
         });
     });
 }
-// enablePWAFunctionality();
+enablePWAFunctionality();
 
 
 // Listen for settings menu changes
