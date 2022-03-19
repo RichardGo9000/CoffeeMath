@@ -135,7 +135,7 @@ function addMenuEventListeners() {
     //Exponent
     document.getElementById('topicExponent').addEventListener('click', (e) => {
         console.log('Exponent ' + e);
-        localforage.setItem('topicExponents', document.getElementById('topicExponent').checked);
+        localforage.setItem('topicExponent', document.getElementById('topicExponent').checked);
     });
     //Negatives
     document.getElementById('topicNegatives').addEventListener('click', (e) => {
@@ -167,7 +167,7 @@ const getSettingsFromDB = async () => {
     document.getElementById('topicDivision').checked = await localforage.getItem('topicDivision');
     document.getElementById('topicFactorial').checked = await localforage.getItem('topicFactorial');
     document.getElementById('topicPercentage').checked = await localforage.getItem('topicPercentage');
-    document.getElementById('topicExponent').checked = await localforage.getItem('topicExponents');
+    document.getElementById('topicExponent').checked = await localforage.getItem('topicExponent');
     document.getElementById('topicNegatives').checked = await localforage.getItem('topicNegatives');
     document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
     document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
