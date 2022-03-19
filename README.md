@@ -3,10 +3,10 @@
 CoffeeMath is a simple tool to give people a short burst of math practice in the morning or whenever you want to hone your mathematical skills 
 
 Current State:
-CM is an installable PWA that presents questions from the default subjects list then presents an overview
+settings menu has event listener to check when topics are clicked by the user, also localforage is included in js files
 
 Next Step:
-add localforage to store settings
+have quiz check localforage to determin which topics to display
 
 
 
