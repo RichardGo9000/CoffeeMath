@@ -22,6 +22,18 @@ export class Quiz {
         this.submitElement = null;
         this.problem = null;
         this.menuOpen = false;
+        this.possibleQuestions = [
+            "a",
+            "s",
+            "s",
+            "d",
+            "d",
+            "d",
+            "m",
+            "m",
+            "f",
+            "e",
+        ];
     }
 
     init() {
@@ -86,20 +98,20 @@ export class Quiz {
     }
 
     selectRandomProblem() {
-        const possibleQuestions = [
-            "a",
-            "s",
-            "s",
-            "d",
-            "d",
-            "d",
-            "m",
-            "m",
-            "f",
-            "e",
-        ];
-        let random = Math.floor(Math.random() * possibleQuestions.length);
-        let nextQuestion = possibleQuestions[random];
+        // const possibleQuestions = [
+        //     "a",
+        //     "s",
+        //     "s",
+        //     "d",
+        //     "d",
+        //     "d",
+        //     "m",
+        //     "m",
+        //     "f",
+        //     "e",
+        // ];
+        let random = Math.floor(Math.random() * this.possibleQuestions.length);
+        let nextQuestion = this.possibleQuestions[random];
         let problemResponse;
         switch (nextQuestion) {
             case "a": {
