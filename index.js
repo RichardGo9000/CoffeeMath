@@ -166,25 +166,84 @@ function addMenuEventListeners() {
 addMenuEventListeners();
 
 const getSettingsFromDB = async () => {
-    document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
-    document.getElementById('topicSubtraction').checked = await localforage.getItem('topicSubtraction');
-    document.getElementById('topicMultiplication').checked = await localforage.getItem('topicMultiplication');
-    document.getElementById('topicDivision').checked = await localforage.getItem('topicDivision');
-    document.getElementById('topicFactorial').checked = await localforage.getItem('topicFactorial');
-    document.getElementById('topicPercentage').checked = await localforage.getItem('topicPercentage');
-    document.getElementById('topicExponent').checked = await localforage.getItem('topicExponent');
-    document.getElementById('topicNegatives').checked = await localforage.getItem('topicNegatives');
-    document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
-    document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
-    document.getElementById('topicLogarithms').checked = await localforage.getItem('topicLogarithms');
+//     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
+//     document.getElementById('topicSubtraction').checked = await localforage.getItem('topicSubtraction');
+//     document.getElementById('topicMultiplication').checked = await localforage.getItem('topicMultiplication');
+//     document.getElementById('topicDivision').checked = await localforage.getItem('topicDivision');
+//     document.getElementById('topicFactorial').checked = await localforage.getItem('topicFactorial');
+//     document.getElementById('topicPercentage').checked = await localforage.getItem('topicPercentage');
+//     document.getElementById('topicExponent').checked = await localforage.getItem('topicExponent');
+//     document.getElementById('topicNegatives').checked = await localforage.getItem('topicNegatives');
+//     document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
+//     document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
+//     document.getElementById('topicLogarithms').checked = await localforage.getItem('topicLogarithms');
 
-    // once line 177 is working I can add the actuall settings from localforage
-    thisQuiz.possibleQuestions = [
-        "a",
-        "s",
-        "d",
-        "m",
-        "f",
-        "e"
-    ];
+//     // once line 177 is working I can add the actuall settings from localforage
+//     thisQuiz.possibleQuestions = [
+//         "a",
+//         "s",
+//         "d",
+//         "m",
+//         "f",
+//         "e"
+//     ];
+    thisQuiz.possibleQuestions = [];
+    let topicAddition = await localforage.getItem('topicAddition');
+    document.getElementById('topicAddition').checked = topicAddition;
+    if (topicAddition) {
+        thisQuiz.possibleQuestions.push('a');
+    }
+    
+    let topicSubtraction =  await localforage.getItem('topicSubtraction');
+    document.getElementById('topicSubtraction').checked = topicSubtraction;
+    if (topicSubtraction) {
+        thisQuiz.possibleQuestions.push('s');
+    }
+
+    let topicMultiplication = await localforage.getItem('topicMultiplication');
+    document.getElementById('topicMultiplication').checked = topicMultiplication;
+    if (topicMultiplication) {
+        thisQuiz.possibleQuestions.push('m');
+    }
+
+    let topicDivision = await localforage.getItem('topicDivision');
+    document.getElementById('topicDivision').checked = topicDivision;
+    if (topicDivision) {
+        thisQuiz.possibleQuestions.push('d');
+    }
+
+    let topicFactorial = await localforage.getItem('topicFactorial');
+    document.getElementById('topicFactorial').checked = topicFactorial;
+    if (topicFactorial) {
+        thisQuiz.possibleQuestions.push('f');
+    }
+
+    let topicPercentage = await localforage.getItem('topicPercentage');
+    document.getElementById('topicPercentage').checked = topicPercentage;
+    if (topicPercentage) {
+        thisQuiz.possibleQuestions.push('p');
+    }
+
+    let topicExponent = await localforage.getItem('topicExponent');
+    document.getElementById('topicExponent').checked = topicExponent;
+    if (topicExponent) {
+        thisQuiz.possibleQuestions.push('e');
+    }
+
+    let topicNegatives = await localforage.getItem('topicNegatives');
+    document.getElementById('topicNegatives').checked = topicNegatives;
+
+
+    let topicFractions = await localforage.getItem('topicFractions');
+    document.getElementById('topicFractions').checked = topicFractions;
+
+
+    let topicDecimals = await localforage.getItem('topicDecimals');
+    document.getElementById('topicDecimals').checked = topicDecimals;
+
+
+    let topicLogarithms = await localforage.getItem('topicLogarithms');
+    document.getElementById('topicLogarithms').checked = topicLogarithms;
+    
+    
 }
