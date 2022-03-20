@@ -7,7 +7,12 @@ import Quiz from './js/Quiz.js';
 // Present Quiz
 
 console.log("Calling Quiz()");
-let thisQuiz = new Quiz().init();
+// this was the source of the problem
+// let thisQuiz = new Quiz().init();
+
+// This is the solution to the problem
+let thisQuiz = new Quiz();
+thisQuiz.init();
 
 
 function enablePWAFunctionality() {
