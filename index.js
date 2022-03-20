@@ -245,5 +245,7 @@ const getSettingsFromDB = async () => {
     let topicLogarithms = await localforage.getItem('topicLogarithms');
     document.getElementById('topicLogarithms').checked = topicLogarithms;
     
+    console.log("Update topics List is: " + thisQuiz.possibleQuestions);
+    
     
 }
