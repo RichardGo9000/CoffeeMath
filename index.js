@@ -7,7 +7,7 @@ import Quiz from './js/Quiz.js';
 // Present Quiz
 
 console.log("Calling Quiz()");
-new Quiz().init();
+let thisQuiz = new Quiz().init();
 
 
 function enablePWAFunctionality() {
@@ -172,4 +172,14 @@ const getSettingsFromDB = async () => {
     document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
     document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
     document.getElementById('topicLogarithms').checked = await localforage.getItem('topicLogarithms');
+
+    // once line 177 is working I can add the actuall settings from localforage
+    thisQuiz.possibleQuestions = [
+        "a",
+        "s",
+        "d",
+        "m",
+        "f",
+        "e"
+    ];
 }
