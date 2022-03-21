@@ -12,7 +12,7 @@ console.log("Calling Quiz()");
 
 // This is the solution to the problem
 let thisQuiz = new Quiz();
-thisQuiz.init();
+thisQuiz.init(getSettingsFromDB());
 
 
 function enablePWAFunctionality() {
@@ -187,47 +187,47 @@ const getSettingsFromDB = async () => {
 //         "f",
 //         "e"
 //     ];
-    thisQuiz.possibleQuestions = [];
+    let questionsAccumulator = [];
     let topicAddition = await localforage.getItem('topicAddition');
     document.getElementById('topicAddition').checked = topicAddition;
     if (topicAddition) {
-        thisQuiz.possibleQuestions.push('a');
+        questionsAccumulator.push('a');
     }
     
     let topicSubtraction =  await localforage.getItem('topicSubtraction');
     document.getElementById('topicSubtraction').checked = topicSubtraction;
     if (topicSubtraction) {
-        thisQuiz.possibleQuestions.push('s');
+        questionsAccumulator.push('s');
     }
 
     let topicMultiplication = await localforage.getItem('topicMultiplication');
     document.getElementById('topicMultiplication').checked = topicMultiplication;
     if (topicMultiplication) {
-        thisQuiz.possibleQuestions.push('m');
+        questionsAccumulator.push('m');
     }
 
     let topicDivision = await localforage.getItem('topicDivision');
     document.getElementById('topicDivision').checked = topicDivision;
     if (topicDivision) {
-        thisQuiz.possibleQuestions.push('d');
+        questionsAccumulator.push('d');
     }
 
     let topicFactorial = await localforage.getItem('topicFactorial');
     document.getElementById('topicFactorial').checked = topicFactorial;
     if (topicFactorial) {
-        thisQuiz.possibleQuestions.push('f');
+        questionsAccumulator.push('f');
     }
 
     let topicPercentage = await localforage.getItem('topicPercentage');
     document.getElementById('topicPercentage').checked = topicPercentage;
     if (topicPercentage) {
-        thisQuiz.possibleQuestions.push('p');
+        questionsAccumulator.push('p');
     }
 
     let topicExponent = await localforage.getItem('topicExponent');
     document.getElementById('topicExponent').checked = topicExponent;
     if (topicExponent) {
-        thisQuiz.possibleQuestions.push('e');
+        questionsAccumulator.push('e');
     }
 
     let topicNegatives = await localforage.getItem('topicNegatives');
@@ -245,7 +245,9 @@ const getSettingsFromDB = async () => {
     let topicLogarithms = await localforage.getItem('topicLogarithms');
     document.getElementById('topicLogarithms').checked = topicLogarithms;
     
-    console.log("Update topics List is: " + thisQuiz.possibleQuestions);
+    console.log("Update topics List is: " + questionsAccumulator);
+    
+    return questionsAccumulator;
     
     
 }
