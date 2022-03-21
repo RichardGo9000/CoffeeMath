@@ -4,15 +4,6 @@ import Quiz from './js/Quiz.js';
 // Main Web App
 //*************
 
-// Present Quiz
-
-console.log("Calling Quiz()");
-// this was the source of the problem
-// let thisQuiz = new Quiz().init();
-
-// This is the solution to the problem
-let thisQuiz = new Quiz();
-thisQuiz.init(getSettingsFromDB());
 
 
 function enablePWAFunctionality() {
@@ -251,3 +242,14 @@ const getSettingsFromDB = async () => {
     
     
 }
+
+
+// Present Quiz
+
+console.log("Calling Quiz()");
+// this was the source of the problem
+// let thisQuiz = new Quiz().init();
+
+// This is the solution to the problem
+let thisQuiz = new Quiz();
+thisQuiz.init(getSettingsFromDB());
