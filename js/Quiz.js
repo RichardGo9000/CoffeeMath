@@ -7,7 +7,7 @@ import PercentageProblem from "./problems/Percentage.js";
 import ExponentProblem from "./problems/Exponent.js";
 export class Quiz {
 
-    constructor() {
+    constructor(topicList = null) {
         this.quizLength = 10;
         this.correctAnswer = NaN;
         this.questionString = "";
@@ -22,7 +22,10 @@ export class Quiz {
         this.submitElement = null;
         this.problem = null;
         this.menuOpen = false;
-        this.possibleQuestions = [
+        if (topicList != null) {
+            this.possibleQuestions = topicList;
+        } else {
+            this.possibleQuestions = [
             "a",
             "s",
             "s",
@@ -34,6 +37,8 @@ export class Quiz {
             "f",
             "e",
         ];
+        }
+        
     }
 
     init() {
