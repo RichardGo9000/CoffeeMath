@@ -40,7 +40,7 @@ export class Quiz {
     console.log("Quiz init function called");
         
         if (topicList != null) {
-            this.possibleQuestions = topicList;
+//             this.possibleQuestions = topicList;
         }
         
         this.setupQuestionCard();
