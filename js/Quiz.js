@@ -7,7 +7,7 @@ import PercentageProblem from "./problems/Percentage.js";
 import ExponentProblem from "./problems/Exponent.js";
 export class Quiz {
 
-    constructor(topicList = null) {
+    constructor() {
         this.quizLength = 10;
         this.correctAnswer = NaN;
         this.questionString = "";
@@ -36,7 +36,7 @@ export class Quiz {
         ];      
     }
 
-    init() {
+    init(topicList = null) {
     console.log("Quiz init function called");
         
         if (topicList != null) {
