@@ -22,27 +22,27 @@ export class Quiz {
         this.submitElement = null;
         this.problem = null;
         this.menuOpen = false;
-        if (topicList != null) {
-            this.possibleQuestions = topicList;
-        } else {
-            this.possibleQuestions = [
-            "a",
-            "s",
-            "s",
-            "d",
-            "d",
-            "d",
-            "m",
-            "m",
-            "f",
-            "e",
-        ];
-        }
-        
+        this.possibleQuestions = [
+           "a",
+           "s",
+           "s",
+           "d",
+           "d",
+           "d",
+           "m",
+           "m",
+           "f",
+           "e",
+        ];      
     }
 
     init() {
     console.log("Quiz init function called");
+        
+        if (topicList != null) {
+            this.possibleQuestions = topicList;
+        }
+        
         this.setupQuestionCard();
         this.selectRandomProblem();
         this.answerElement = document.getElementById("answer");
