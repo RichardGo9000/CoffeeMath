@@ -37,14 +37,15 @@ export class Quiz {
     }
 
     init(topicList = null) {
-    console.log("Quiz init function called");
+        
+    console.log('[Quiz:Init]', 'Init Called');
         
         if (topicList != null) {
             
 //             this.possibleQuestions = topicList;
             
-            console.log("topicList Array: " + topicList);
-            console.log("this.possibleQuestions Array: " + this.possibleQuestions);
+            console.log('[Quiz:Init]', { topicList });
+            console.log('[Quiz:Init]', `possibleQuestions -> ${this.possibleQuestions}`);
             
                     this.possibleQuestions = [
            "a",
