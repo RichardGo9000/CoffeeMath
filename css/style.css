@@ -1,7 +1,8 @@
 /* Light Mode */
 :root {
     --backgroundColor: hsl(196, 100%, 26%);
-
+/*     --backgroundColor: #967bb6; */
+        
     --textColor:  hsl(196, 100%, 95%);
     --inputColor:  hsl(196, 100%, 32%);
     --borderColor: var(--textColor);
@@ -73,6 +74,7 @@ body {
 }
 
 #quizLength {
+    /* this should be changed to vw */
     width: 4vh;
 }
 

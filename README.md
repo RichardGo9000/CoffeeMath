@@ -1,12 +1,12 @@
-# CoffeeMath v1.2
+# CoffeeMath v1.3
 
 CoffeeMath is a simple tool to give people a short burst of math practice in the morning or whenever you want to hone your mathematical skills 
 
 Current State:
-CM is an installable PWA that presents questions from the default subjects list then presents an overview
+settings menu has event listener to check when topics are clicked by the user, also localforage is included in js files
 
 Next Step:
-add localforage to store settings
+have quiz check localforage to determin which topics to display
 
 
 
@@ -15,6 +15,7 @@ To Do:
 
 Javascript Improvements
 - [x] CLEAN UP CODE BASE
+- [ ] add skip function when submit is entered twice in quick succession
 - [ ] add uninstall function when install option is unchecked
 - [ ] localforage to store settings & history
 - [ ] shake answer for a couple seconds to indicate wrong answer
@@ -41,6 +42,7 @@ HTML Improvements
 
 
 CSS Improvements
+move gear icon down a little so its not over the battery icon in mobile while keyboard is up
 - [x] contrast ratio of 4.5:1 https://contrast-ratio.com/
 - [x] set up css sibling selector to hide/show settings menu and fix gear double click glitch
 - [ ] color contrast of 4.5:1 between background color and text color

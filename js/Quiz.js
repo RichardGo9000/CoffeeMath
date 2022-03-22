@@ -22,10 +22,45 @@ export class Quiz {
         this.submitElement = null;
         this.problem = null;
         this.menuOpen = false;
+        this.possibleQuestions = [
+           "a",
+           "s",
+           "s",
+           "d",
+           "d",
+           "d",
+           "m",
+           "m",
+           "f",
+           "e",
+        ];      
     }
 
-    init() {
-    console.log("Quiz init function called");
+    init(topicList = null) {
+        
+    console.log('[Quiz:Init]', 'Init Called');
+        
+        if (topicList != null) {
+            
+//             this.possibleQuestions = topicList;
+            
+            console.log('[Quiz:Init]', { topicList });
+            console.log('[Quiz:Init]', `possibleQuestions -> ${this.possibleQuestions}`);
+            
+                    this.possibleQuestions = [
+           "a",
+           "s",
+           "s",
+           "d",
+           "d",
+           "d",
+           "m",
+           "m",
+           "f",
+           "e",
+        ];  
+        }
+        
         this.setupQuestionCard();
         this.selectRandomProblem();
         this.answerElement = document.getElementById("answer");
@@ -86,20 +121,20 @@ export class Quiz {
     }
 
     selectRandomProblem() {
-        const possibleQuestions = [
-            "a",
-            "s",
-            "s",
-            "d",
-            "d",
-            "d",
-            "m",
-            "m",
-            "f",
-            "e",
-        ];
-        let random = Math.floor(Math.random() * possibleQuestions.length);
-        let nextQuestion = possibleQuestions[random];
+        // const possibleQuestions = [
+        //     "a",
+        //     "s",
+        //     "s",
+        //     "d",
+        //     "d",
+        //     "d",
+        //     "m",
+        //     "m",
+        //     "f",
+        //     "e",
+        // ];
+        let random = Math.floor(Math.random() * this.possibleQuestions.length);
+        let nextQuestion = this.possibleQuestions[random];
         let problemResponse;
         switch (nextQuestion) {
             case "a": {

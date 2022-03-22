@@ -20,7 +20,8 @@ self.addEventListener('install', (e) => {
             'js/problems/Factorial.js',
             'js/problems/Percentage.js',
             'js/problems/Exponent.js',
-        ])),
+            'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js', //not sure if this line is necessary
+        ])), 
     );
 });
 
