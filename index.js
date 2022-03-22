@@ -3,9 +3,6 @@ import Quiz from './js/Quiz.js';
 
 // Main Web App
 //*************
-
-
-
 function enablePWAFunctionality() {
     // registers service worker
     if ('serviceWorker' in navigator) {
@@ -44,59 +41,38 @@ function enablePWAFunctionality() {
 }
 enablePWAFunctionality();
 
-// Set up Settings DB
-const dataLayer = async () => {
+const dataLayer = async() => {
+    const coffeeDB = "CoffeeMathDB";
+    localforage.config({ name: 'CoffeeMath', storeName: 'CoffeeMathSettings' });
 
-        const initDB = async () => {
-            const coffeeDB = "CoffeeMathDB";
-            localforage.config({
-                name: 'CoffeeMath',
-                storeName: 'CoffeeMathSettings'
-            });
-        }
-        //IIFE
-        (async () => {
-            await initDB()
-        })()
+    let userPrefs = await localforage.getItem('preferences')
+    console.log('[CoffeeMath:DataLayer]', userPrefs );
+    let topicList;
 
-        let appUpdateLevel = await localforage.getItem('appUpdateLevel');
-        console.log('Update Level: ' + appUpdateLevel);
-
-        if (appUpdateLevel == null) {
-            const saveDefaultSettings = async () => {
-                localforage.setItem('appUpdateLevel', 50);
-                localforage.setItem('topicAddition', true);
-                localforage.setItem('topicSubtraction', true);
-                localforage.setItem('topicMultiplication', true);
-                localforage.setItem('topicDivision', true);
-                localforage.setItem('topicFactorial', false);
-                localforage.setItem('topicPercentage', false);
-                localforage.setItem('topicExponent', false);
-                localforage.setItem('topicNegatives', false);
-                localforage.setItem('topicFractions', false);
-                localforage.setItem('topicDecimals', false);
-                localforage.setItem('topicLogarithms', false);
-            }
-            //IIFE
-            (async () => {
-                await saveDefaultSettings()
-            })()
-        } else {
-            (async () => {
-                await getSettingsFromDB()
-            })()
-        }
-
-
+    if (userPrefs === null) {
+        localforage.setItem('preferences', {
+            'appUpdateLevel': 50,
+            'topicAddition': true,
+            'topicSubtraction': true,
+            'topicMultiplication': true,
+            'topicDivision': true,
+            'topicFactorial': false,
+            'topicPercentage': false,
+            'topicExponent': false,
+            'topicNegatives': false,
+            'topicFractions': false,
+            'topicDecimals': false,
+            'topicLogarithms': false
+        })
+    } else {
+     topicList = await getSettingsFromDB()
+     console.log('[CoffeeMath:DataLayer]', { topicList });
     }
-    (async () => {
-        await dataLayer()
-    })()
+    return topicList;
+}
 
 // Listen for settings menu changes
 function addMenuEventListeners() {
-
-
     //Addition
     document.getElementById('topicAddition').addEventListener('click', (e) => {
         console.log('Addition ' + e);
@@ -156,7 +132,7 @@ function addMenuEventListeners() {
 }
 addMenuEventListeners();
 
-const getSettingsFromDB = async () => {
+const getSettingsFromDB = async() => {
 //     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
 //     document.getElementById('topicSubtraction').checked = await localforage.getItem('topicSubtraction');
 //     document.getElementById('topicMultiplication').checked = await localforage.getItem('topicMultiplication');
@@ -178,69 +154,49 @@ const getSettingsFromDB = async () => {
 //         "f",
 //         "e"
 //     ];
-    let questionsAccumulator = [];
-    let topicAddition = await localforage.getItem('topicAddition');
+
+    const {
+        topicAddition, topicSubtraction, topicMultiplication,
+        topicDivision, topicFactorial, topicPercentage,
+        topicExponent, topicNegatives, topicFractions,
+        topicDecimals, topicLogarithms
+    } = await localforage.getItem('preferences');
+    const questionsAccumulator = [];
+
+
     document.getElementById('topicAddition').checked = topicAddition;
-    if (topicAddition) {
-        questionsAccumulator.push('a');
-    }
+    if (topicAddition) questionsAccumulator.push('a');
     
-    let topicSubtraction =  await localforage.getItem('topicSubtraction');
+
     document.getElementById('topicSubtraction').checked = topicSubtraction;
-    if (topicSubtraction) {
-        questionsAccumulator.push('s');
-    }
+    if (topicSubtraction) questionsAccumulator.push('s');
 
-    let topicMultiplication = await localforage.getItem('topicMultiplication');
     document.getElementById('topicMultiplication').checked = topicMultiplication;
-    if (topicMultiplication) {
-        questionsAccumulator.push('m');
-    }
+    if (topicMultiplication) questionsAccumulator.push('m');
 
-    let topicDivision = await localforage.getItem('topicDivision');
     document.getElementById('topicDivision').checked = topicDivision;
-    if (topicDivision) {
-        questionsAccumulator.push('d');
-    }
+    if (topicDivision) questionsAccumulator.push('d');
 
-    let topicFactorial = await localforage.getItem('topicFactorial');
     document.getElementById('topicFactorial').checked = topicFactorial;
-    if (topicFactorial) {
-        questionsAccumulator.push('f');
-    }
+    if (topicFactorial) questionsAccumulator.push('f');
 
-    let topicPercentage = await localforage.getItem('topicPercentage');
     document.getElementById('topicPercentage').checked = topicPercentage;
-    if (topicPercentage) {
-        questionsAccumulator.push('p');
-    }
+    if (topicPercentage) questionsAccumulator.push('p');
 
-    let topicExponent = await localforage.getItem('topicExponent');
     document.getElementById('topicExponent').checked = topicExponent;
-    if (topicExponent) {
-        questionsAccumulator.push('e');
-    }
+    if (topicExponent) questionsAccumulator.push('e');
 
-    let topicNegatives = await localforage.getItem('topicNegatives');
     document.getElementById('topicNegatives').checked = topicNegatives;
 
-
-    let topicFractions = await localforage.getItem('topicFractions');
     document.getElementById('topicFractions').checked = topicFractions;
 
-
-    let topicDecimals = await localforage.getItem('topicDecimals');
     document.getElementById('topicDecimals').checked = topicDecimals;
 
-
-    let topicLogarithms = await localforage.getItem('topicLogarithms');
     document.getElementById('topicLogarithms').checked = topicLogarithms;
     
 //     console.log("Update topics List is: " + questionsAccumulator);
     
     return questionsAccumulator;
-    
-    
 }
 
 
@@ -252,4 +208,4 @@ console.log("Calling Quiz()");
 
 // This is the solution to the problem
 let thisQuiz = new Quiz();
-thisQuiz.init(getSettingsFromDB());
+thisQuiz.init(await dataLayer());
