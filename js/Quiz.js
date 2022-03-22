@@ -43,7 +43,8 @@ export class Quiz {
             
 //             this.possibleQuestions = topicList;
             
-            console.log("Topic List Array: " + topicList)
+            console.log("Topic List Array: " + topicList);
+            console.log("Topic List Array: " + possibleQuestions);
             
                     this.possibleQuestions = [
            "a",
