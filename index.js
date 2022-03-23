@@ -64,10 +64,10 @@ const dataLayer = async() => {
             'topicDecimals': false,
             'topicLogarithms': false
         })
-    } else {
-     topicList = await getSettingsFromDB()
-     console.log('[CoffeeMath:DataLayer]', { topicList });
-    }
+    
+    topicList = await getSettingsFromDB()
+    console.log('[CoffeeMath:DataLayer]', { topicList });
+    
     return topicList;
 }
 
