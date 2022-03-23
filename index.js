@@ -209,3 +209,4 @@ console.log("Calling Quiz()");
 // This is the solution to the problem
 let thisQuiz = new Quiz();
 thisQuiz.init(await dataLayer());
+}
