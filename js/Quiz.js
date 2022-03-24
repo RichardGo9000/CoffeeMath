@@ -37,16 +37,14 @@ export class Quiz {
     }
 
     init(topicList = null) {
-        
-    console.log("meow");
-    console.log('[Quiz:Init]', 'Init Called');
+    console.log("Quiz init function called");
         
         if (topicList != null) {
             
 //             this.possibleQuestions = topicList;
             
-            console.log('[Quiz:Init]', { topicList });
-            console.log('[Quiz:Init]', `possibleQuestions -> ${this.possibleQuestions}`);
+            console.log("topicList Array: " + topicList);
+            console.log("this.possibleQuestions Array: " + this.possibleQuestions);
             
                     this.possibleQuestions = [
            "a",
@@ -243,4 +241,3 @@ export class Quiz {
     }
 }
 export default Quiz;
-
