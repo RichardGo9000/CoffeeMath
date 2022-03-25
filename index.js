@@ -87,6 +87,8 @@ const dataLayer = async () => {
             })()
         }
 
+    let thisQuiz = new Quiz();
+    thisQuiz.init(await dataLayer());
 
     }
     (async () => {
@@ -255,5 +257,5 @@ console.log("Calling Quiz()");
 // let thisQuiz = new Quiz();
 // thisQuiz.init(await dataLayer());
 
-let thisQuiz = new Quiz();
-thisQuiz.init(getSettingsFromDB());
+//let thisQuiz = new Quiz();
+//thisQuiz.init(getSettingsFromDB());
