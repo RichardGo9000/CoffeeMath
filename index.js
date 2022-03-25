@@ -90,7 +90,7 @@ const dataLayer = async () => {
         }
 
     
-//     thisQuiz.init(await dataLayer());
+    thisQuiz.init(await dataLayer());
 
     }
     (async () => {
@@ -256,8 +256,8 @@ console.log("Calling Quiz()");
 
 // This is the solution to the problem
 
-// let thisQuiz = new Quiz();
+let thisQuiz = new Quiz();
 // thisQuiz.init(await dataLayer());
 
-let thisQuiz = new Quiz();
-thisQuiz.init(getSettingsFromDB());
+// let thisQuiz = new Quiz();
+// thisQuiz.init(getSettingsFromDB());
