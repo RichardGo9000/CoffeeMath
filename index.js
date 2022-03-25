@@ -1,6 +1,8 @@
 import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 import Quiz from './js/Quiz.js';
 
+let thisQuiz = new Quiz();
+
 // Main Web App
 //*************
 
@@ -87,7 +89,7 @@ const dataLayer = async () => {
             })()
         }
 
-    let thisQuiz = new Quiz();
+    
     thisQuiz.init(await dataLayer());
 
     }
