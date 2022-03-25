@@ -37,8 +37,9 @@ export class Quiz {
     }
 
     init(topicList = null) {
-    console.log("Meow");
+
     console.log("Quiz init function called");
+    console.log('[Quiz:Init]', { topicList });
         
         if (topicList != null) {
             
