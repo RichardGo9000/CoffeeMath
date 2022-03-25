@@ -251,5 +251,9 @@ console.log("Calling Quiz()");
 // let thisQuiz = new Quiz().init();
 
 // This is the solution to the problem
+
+// let thisQuiz = new Quiz();
+// thisQuiz.init(await dataLayer());
+
 let thisQuiz = new Quiz();
 thisQuiz.init(getSettingsFromDB());
