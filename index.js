@@ -50,6 +50,73 @@ const dataLayer = async() => {
     console.log('[CoffeeMath:DataLayer]', userPrefs );
     let topicList;
 
+    const getSettingsFromDB = async() => {
+//     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
+//     document.getElementById('topicSubtraction').checked = await localforage.getItem('topicSubtraction');
+//     document.getElementById('topicMultiplication').checked = await localforage.getItem('topicMultiplication');
+//     document.getElementById('topicDivision').checked = await localforage.getItem('topicDivision');
+//     document.getElementById('topicFactorial').checked = await localforage.getItem('topicFactorial');
+//     document.getElementById('topicPercentage').checked = await localforage.getItem('topicPercentage');
+//     document.getElementById('topicExponent').checked = await localforage.getItem('topicExponent');
+//     document.getElementById('topicNegatives').checked = await localforage.getItem('topicNegatives');
+//     document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
+//     document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
+//     document.getElementById('topicLogarithms').checked = await localforage.getItem('topicLogarithms');
+
+//     // once line 177 is working I can add the actuall settings from localforage
+//     thisQuiz.possibleQuestions = [
+//         "a",
+//         "s",
+//         "d",
+//         "m",
+//         "f",
+//         "e"
+//     ];
+
+    const {
+        topicAddition, topicSubtraction, topicMultiplication,
+        topicDivision, topicFactorial, topicPercentage,
+        topicExponent, topicNegatives, topicFractions,
+        topicDecimals, topicLogarithms
+    } = await localforage.getItem('preferences');
+    const questionsAccumulator = [];
+
+
+    document.getElementById('topicAddition').checked = topicAddition;
+    if (topicAddition) questionsAccumulator.push('a');
+    
+
+    document.getElementById('topicSubtraction').checked = topicSubtraction;
+    if (topicSubtraction) questionsAccumulator.push('s');
+
+    document.getElementById('topicMultiplication').checked = topicMultiplication;
+    if (topicMultiplication) questionsAccumulator.push('m');
+
+    document.getElementById('topicDivision').checked = topicDivision;
+    if (topicDivision) questionsAccumulator.push('d');
+
+    document.getElementById('topicFactorial').checked = topicFactorial;
+    if (topicFactorial) questionsAccumulator.push('f');
+
+    document.getElementById('topicPercentage').checked = topicPercentage;
+    if (topicPercentage) questionsAccumulator.push('p');
+
+    document.getElementById('topicExponent').checked = topicExponent;
+    if (topicExponent) questionsAccumulator.push('e');
+
+    document.getElementById('topicNegatives').checked = topicNegatives;
+
+    document.getElementById('topicFractions').checked = topicFractions;
+
+    document.getElementById('topicDecimals').checked = topicDecimals;
+
+    document.getElementById('topicLogarithms').checked = topicLogarithms;
+    
+//     console.log("Update topics List is: " + questionsAccumulator);
+    
+    return questionsAccumulator;
+}
+    
     if (userPrefs === null) {
         localforage.setItem('preferences', {
             'appUpdateLevel': 50,
@@ -133,72 +200,7 @@ function addMenuEventListeners() {
 }
 addMenuEventListeners();
 
-const getSettingsFromDB = async() => {
-//     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
-//     document.getElementById('topicSubtraction').checked = await localforage.getItem('topicSubtraction');
-//     document.getElementById('topicMultiplication').checked = await localforage.getItem('topicMultiplication');
-//     document.getElementById('topicDivision').checked = await localforage.getItem('topicDivision');
-//     document.getElementById('topicFactorial').checked = await localforage.getItem('topicFactorial');
-//     document.getElementById('topicPercentage').checked = await localforage.getItem('topicPercentage');
-//     document.getElementById('topicExponent').checked = await localforage.getItem('topicExponent');
-//     document.getElementById('topicNegatives').checked = await localforage.getItem('topicNegatives');
-//     document.getElementById('topicFractions').checked = await localforage.getItem('topicFractions');
-//     document.getElementById('topicDecimals').checked = await localforage.getItem('topicDecimals');
-//     document.getElementById('topicLogarithms').checked = await localforage.getItem('topicLogarithms');
 
-//     // once line 177 is working I can add the actuall settings from localforage
-//     thisQuiz.possibleQuestions = [
-//         "a",
-//         "s",
-//         "d",
-//         "m",
-//         "f",
-//         "e"
-//     ];
-
-    const {
-        topicAddition, topicSubtraction, topicMultiplication,
-        topicDivision, topicFactorial, topicPercentage,
-        topicExponent, topicNegatives, topicFractions,
-        topicDecimals, topicLogarithms
-    } = await localforage.getItem('preferences');
-    const questionsAccumulator = [];
-
-
-    document.getElementById('topicAddition').checked = topicAddition;
-    if (topicAddition) questionsAccumulator.push('a');
-    
-
-    document.getElementById('topicSubtraction').checked = topicSubtraction;
-    if (topicSubtraction) questionsAccumulator.push('s');
-
-    document.getElementById('topicMultiplication').checked = topicMultiplication;
-    if (topicMultiplication) questionsAccumulator.push('m');
-
-    document.getElementById('topicDivision').checked = topicDivision;
-    if (topicDivision) questionsAccumulator.push('d');
-
-    document.getElementById('topicFactorial').checked = topicFactorial;
-    if (topicFactorial) questionsAccumulator.push('f');
-
-    document.getElementById('topicPercentage').checked = topicPercentage;
-    if (topicPercentage) questionsAccumulator.push('p');
-
-    document.getElementById('topicExponent').checked = topicExponent;
-    if (topicExponent) questionsAccumulator.push('e');
-
-    document.getElementById('topicNegatives').checked = topicNegatives;
-
-    document.getElementById('topicFractions').checked = topicFractions;
-
-    document.getElementById('topicDecimals').checked = topicDecimals;
-
-    document.getElementById('topicLogarithms').checked = topicLogarithms;
-    
-//     console.log("Update topics List is: " + questionsAccumulator);
-    
-    return questionsAccumulator;
-}
 
 
 // Present Quiz
