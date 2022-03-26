@@ -1,5 +1,6 @@
 import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 import Quiz from './js/Quiz.js';
+let thisQuiz;
 
 // Main Web App
 //*************
@@ -207,6 +208,10 @@ console.log("Calling Quiz()");
 // let thisQuiz = new Quiz().init();
 
 // This is the solution to the problem
-let thisQuiz = new Quiz();
-thisQuiz.init(await dataLayer());
+// let thisQuiz = new Quiz();
+// thisQuiz.init(await dataLayer());
+    thisQuiz = new Quiz();
+    thisQuiz.init(await getSettingsFromDB());
 }
+
+dataLayer();
