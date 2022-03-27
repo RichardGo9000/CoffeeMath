@@ -1,7 +1,7 @@
 import localforage from 'https://cdn.skypack.dev/pin/localforage@v1.9.0-Ua6HaBzFSvfonEYhVE2t/min/localforage.js';
 import Quiz from './js/Quiz.js';
 let thisQuiz;
-// let topicList; //keep a copy of settings in memory so it doesnt have to be fetched at the begining of each setting change
+let topicList; //keep a copy of settings in memory so it doesnt have to be fetched at the begining of each setting change
 
 // Main Web App
 //*************
@@ -49,7 +49,7 @@ const dataLayer = async() => {
 
     let userPrefs = await localforage.getItem('preferences')
     console.log('[CoffeeMath:DataLayer]', userPrefs );
-    let topicList;
+//     let topicList;
 
     //add a getter and seter for the DB Settings
 //     const getDBSettings = async() => {}
