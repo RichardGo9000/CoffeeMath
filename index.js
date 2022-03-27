@@ -54,14 +54,14 @@ const dataLayer = async() => {
     //add a getter and seter for the DB Settings
 //     const getDBSettings = async() => {}
 //     const setDBSettings = async() => {}
-    const getDBSettings = () => {
+    const getDBSettings = async() => {
         console.log('getDBSettings() executed');
     }
-    const setDBSettings = () => {
+    const setDBSettings = async() => {
         console.log('setDBSettings() executed');
     }
-    getDBSettings();
-    setDBSettings();
+    await getDBSettings();
+    await setDBSettings();
     
     const getSettingsFromDB = async() => {
 //     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
