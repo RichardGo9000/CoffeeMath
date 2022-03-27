@@ -54,15 +54,7 @@ const dataLayer = async() => {
     //add a getter and seter for the DB Settings
 //     const getDBSettings = async() => {}
 //     const setDBSettings = async() => {}
-    const getDBSettings = async() => {
-        console.log('getDBSettings() executed');
-        console.log('topicList: ' + topicList);
-    }
-    const setDBSettings = async() => {
-        console.log('setDBSettings() executed');
-    }
-    await getDBSettings();
-    await setDBSettings();
+
     
     const getSettingsFromDB = async() => {
 //     document.getElementById('topicAddition').checked = await localforage.getItem('topicAddition');
@@ -215,7 +207,15 @@ function addMenuEventListeners() {
 addMenuEventListeners();
 
 
-
+    const getDBSettings = async() => {
+        console.log('getDBSettings() executed');
+        console.log('topicList: ' + topicList);
+    }
+    const setDBSettings = async() => {
+        console.log('setDBSettings() executed');
+    }
+    await getDBSettings();
+    await setDBSettings();
 
 // Present Quiz
 
