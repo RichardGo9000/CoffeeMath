@@ -56,6 +56,7 @@ const dataLayer = async() => {
 //     const setDBSettings = async() => {}
     const getDBSettings = async() => {
         console.log('getDBSettings() executed');
+        console.log('topicList: ' + topicList);
     }
     const setDBSettings = async() => {
         console.log('setDBSettings() executed');
