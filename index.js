@@ -215,19 +215,21 @@ const dataLayer = async () => {
             console.log('Logarithms ' + e);
             localforage.setItem('topicLogarithms', document.getElementById('topicLogarithms').checked);
         });
+        
+        //TO DO NEXT: Create a complete preferences object to pass to localforage
     }
     addMenuEventListeners();
 
 
-    const getDBSettings = async () => {
-        console.log('getDBSettings() executed');
-        console.log('topicList: ' + topicList);
-    }
-    const setDBSettings = async () => {
-        console.log('setDBSettings() executed');
-    }
-    await getDBSettings();
-    await setDBSettings();
+//     const getDBSettings = async () => {
+//         console.log('getDBSettings() executed');
+//         console.log('topicList: ' + topicList);
+//     }
+//     const setDBSettings = async () => {
+//         console.log('setDBSettings() executed');
+//     }
+//     await getDBSettings();
+//     await setDBSettings();
 
     // Present Quiz
 
