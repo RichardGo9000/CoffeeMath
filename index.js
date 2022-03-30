@@ -159,6 +159,11 @@ const dataLayer = async () => {
 
     // Listen for settings menu changes
     function addMenuEventListeners() {
+        function createPreferencesObject(key, value) {
+            console.log(await topicList[key]);
+        }
+        
+        createPreferencesObject('topicAddition', false);
         //Addition
         document.getElementById('topicAddition').addEventListener('click', (e) => {
             console.log('Addition ' + e);
