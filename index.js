@@ -133,37 +133,37 @@ const dataLayer = async () => {
         return questionsAccumulator;
     }
 
-    if (userPrefs === null) {
-        localforage.setItem('preferences', {
-            'appUpdateLevel': 50,
-            'topicAddition': true,
-            'topicSubtraction': true,
-            'topicMultiplication': true,
-            'topicDivision': true,
-            'topicFactorial': false,
-            'topicPercentage': false,
-            'topicExponent': false,
-            'topicNegatives': false,
-            'topicFractions': false,
-            'topicDecimals': false,
-            'topicLogarithms': false
-        })
+    // if (userPrefs === null) {
+    //     localforage.setItem('preferences', {
+    //         'appUpdateLevel': 50,
+    //         'topicAddition': true,
+    //         'topicSubtraction': true,
+    //         'topicMultiplication': true,
+    //         'topicDivision': true,
+    //         'topicFactorial': false,
+    //         'topicPercentage': false,
+    //         'topicExponent': false,
+    //         'topicNegatives': false,
+    //         'topicFractions': false,
+    //         'topicDecimals': false,
+    //         'topicLogarithms': false
+    //     })
 
-        topicList = await getSettingsFromDB()
-        console.log('[CoffeeMath:DataLayer]', {
-            topicList
-        });
+    //     topicList = await getSettingsFromDB()
+    //     console.log('[CoffeeMath:DataLayer]', {
+    //         topicList
+    //     });
 
-        return topicList;
-    }
+    //     return topicList;
+    // }
 
     // Listen for settings menu changes
     function addMenuEventListeners() {
-//         function createPreferencesObject(key, value) {
-//             console.log(topicList[key]);
-//         }
-        
-//         createPreferencesObject('topicAddition', false);
+        //         function createPreferencesObject(key, value) {
+        //             console.log(topicList[key]);
+        //         }
+
+        //         createPreferencesObject('topicAddition', false);
         //Addition
         document.getElementById('topicAddition').addEventListener('click', (e) => {
             console.log('Addition ' + e);
@@ -220,21 +220,21 @@ const dataLayer = async () => {
             console.log('Logarithms ' + e);
             localforage.setItem('topicLogarithms', document.getElementById('topicLogarithms').checked);
         });
-        
+
         //TO DO NEXT: Create a complete preferences object to pass to localforage
     }
     addMenuEventListeners();
 
 
-//     const getDBSettings = async () => {
-//         console.log('getDBSettings() executed');
-//         console.log('topicList: ' + topicList);
-//     }
-//     const setDBSettings = async () => {
-//         console.log('setDBSettings() executed');
-//     }
-//     await getDBSettings();
-//     await setDBSettings();
+    //     const getDBSettings = async () => {
+    //         console.log('getDBSettings() executed');
+    //         console.log('topicList: ' + topicList);
+    //     }
+    //     const setDBSettings = async () => {
+    //         console.log('setDBSettings() executed');
+    //     }
+    //     await getDBSettings();
+    //     await setDBSettings();
 
     // Present Quiz
 
