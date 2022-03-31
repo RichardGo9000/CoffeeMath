@@ -133,29 +133,29 @@ const dataLayer = async () => {
         return questionsAccumulator;
     }
 
-    // if (userPrefs === null) {
-    //     localforage.setItem('preferences', {
-    //         'appUpdateLevel': 50,
-    //         'topicAddition': true,
-    //         'topicSubtraction': true,
-    //         'topicMultiplication': true,
-    //         'topicDivision': true,
-    //         'topicFactorial': false,
-    //         'topicPercentage': false,
-    //         'topicExponent': false,
-    //         'topicNegatives': false,
-    //         'topicFractions': false,
-    //         'topicDecimals': false,
-    //         'topicLogarithms': false
-    //     })
+    if (userPrefs === null) {
+        localforage.setItem('preferences', {
+            'appUpdateLevel': 50,
+            'topicAddition': true,
+            'topicSubtraction': true,
+            'topicMultiplication': true,
+            'topicDivision': true,
+            'topicFactorial': false,
+            'topicPercentage': false,
+            'topicExponent': false,
+            'topicNegatives': false,
+            'topicFractions': false,
+            'topicDecimals': false,
+            'topicLogarithms': false
+        })
 
-    //     topicList = await getSettingsFromDB()
-    //     console.log('[CoffeeMath:DataLayer]', {
-    //         topicList
-    //     });
+        topicList = await getSettingsFromDB()
+        console.log('[CoffeeMath:DataLayer]', {
+            topicList
+        });
 
-    //     return topicList;
-    // }
+        return topicList;
+    }
 
     // Listen for settings menu changes
     function addMenuEventListeners() {
