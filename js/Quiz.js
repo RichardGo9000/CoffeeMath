@@ -7,81 +7,53 @@ import PercentageProblem from "./problems/Percentage.js";
 import ExponentProblem from "./problems/Exponent.js";
 export class Quiz {
 
-    constructor() {
-        this.quizLength = 10;
-        this.correctAnswer = NaN;
-        this.questionString = "";
-        this.questionList = [];
-        this.questionNumber = 1;
-        this.responseTrackingString = "";
-        this.responseTracker = []; //use one string per question to track whether response was correct after n number of tries, or skipped (c=correct, i=incorrect, s=skipped[s Not implemented yet])
-        this.responseList = []; //use one array per question to track actual responses
-        this.questionDisplay = null;
-        this.answerElement = null;
-//         this.responseElement = null;
-        this.submitElement = null;
-        this.problem = null;
-        this.menuOpen = false;
-        this.possibleQuestions = [
-           "a",
-           "s",
-           "s",
-           "d",
-           "d",
-           "d",
-           "m",
-           "m",
-           "f",
-           "e",
-        ];      
+    constructor(user, debug = false) {
+      this.quizLength = 10;
+      this.correctAnswer = NaN;
+      this.questionString = "";
+      this.questionList = [];
+      this.questionNumber = 1;
+      this.responseTrackingString = "";
+      this.responseTracker = []; //use one string per question to track whether response was correct after n number of tries, or skipped (c=correct, i=incorrect, s=skipped[s Not implemented yet])
+      this.responseList = []; //use one array per question to track actual responses
+      this.questionDisplay = null;
+      this.answerElement = null;
+        //         this.responseElement = null;
+      this.submitElement = null;
+      this.problem = null;
+      this.menuOpen = false;
+      this.possibleQuestions = [];
+      this.init(user);
+      this.debug = debug;
     }
 
-    init(topicList = null) {
+    init(user) {
+      for (const [key, value] of Object.entries(user.topics)) {
+        // Check if the value is true and if so show it in the array
+        if (value) this.possibleQuestions.push(key);
+      }
+      if (this.debug) console.log('[Quiz:Init]', {topics: this.possibleQuestions})
         
-    console.log("meow");
-    console.log('[Quiz:Init]', 'Init Called');
-        
-        if (topicList != null) {
-            
-//             this.possibleQuestions = topicList;
-            
-            console.log('[Quiz:Init]', { topicList });
-            console.log('[Quiz:Init]', `possibleQuestions -> ${this.possibleQuestions}`);
-            
-                    this.possibleQuestions = [
-           "a",
-           "s",
-           "s",
-           "d",
-           "d",
-           "d",
-           "m",
-           "m",
-           "f",
-           "e",
-        ];  
+      this.setQuestionCard();
+      this.selectRandomProblem();
+      this.answerElement = document.getElementById("answer");
+
+      document.addEventListener("keydown", (e) => {
+        const regex = /^[0-9.,\-]+$/;
+        if (regex.test(e.key)) {
+
+            if (document.activeElement.tagName != "INPUT")
+                this.answerElement.value += e.key;
         }
+        else if (e.key == "Backspace") {
+
+            if (document.activeElement.tagName != "INPUT")
+                this.answerElement.value = this.answerElement.value.slice(0, -1);
+        }
+        if (e.key == "Enter")
+            this.submitCard();
         
-        this.setupQuestionCard();
-        this.selectRandomProblem();
-        this.answerElement = document.getElementById("answer");
-
-        document.addEventListener("keydown", (e) => {
-            const regex = /^[0-9.,\-]+$/;
-            if (regex.test(e.key)) {
-
-                if (document.activeElement.tagName != "INPUT")
-                    this.answerElement.value += e.key;
-            }
-            else if (e.key == "Backspace") {
-
-                if (document.activeElement.tagName != "INPUT")
-                    this.answerElement.value = this.answerElement.value.slice(0, -1);
-            }
-            if (e.key == "Enter")
-                this.submitCard();
-            
-        });
+    });
     }
     
     setQuestionCard() {
@@ -110,9 +82,8 @@ export class Quiz {
     setupNextCard() {
         if (this.questionList.length === this.quizLength) {
             this.showOverview();
-        }
-        else {
-            console.log("setting up next card");
+        } else {
+            if (this.debug) console.log("setting up next card");
             this.answerElement.value = "";
             // this.submitElement.value = "Check"; //change next button to submit button
             this.selectRandomProblem();
@@ -122,57 +93,45 @@ export class Quiz {
     }
 
     selectRandomProblem() {
-        // const possibleQuestions = [
-        //     "a",
-        //     "s",
-        //     "s",
-        //     "d",
-        //     "d",
-        //     "d",
-        //     "m",
-        //     "m",
-        //     "f",
-        //     "e",
-        // ];
         let random = Math.floor(Math.random() * this.possibleQuestions.length);
         let nextQuestion = this.possibleQuestions[random];
         let problemResponse;
         switch (nextQuestion) {
-            case "a": {
+            case "addition": {
                 this.problem = new AdditionProblem();
                 problemResponse = this.problem.mathFn(2, 2);
                 break;
             }
-            case "s": {
+            case "subtraction": {
                 this.problem = new SubtractionProblem();
                 problemResponse = this.problem.mathFn(2, 2);
                 break;
             }
-            case "m": {
+            case "multiplication": {
                 this.problem = new MultiplicationProblem();
                 problemResponse = this.problem.mathFn(1, 2);
                 break;
             }
-            case "d": {
+            case "division": {
                 this.problem = new DivisionProblem();
                 problemResponse = this.problem.mathFn(2, 1);
                 break;
             }
-            case "f": {
+            case "factorial": {
                 this.problem = new FactorialProblem();
                 if (this.problem instanceof FactorialProblem) {
                     problemResponse = this.problem.mathFn();
                 }
                 break;
             }
-            case "p": {
+            case "percentage": {
                 this.problem = new PercentageProblem();
                 if (this.problem instanceof PercentageProblem) {
                     problemResponse = this.problem.mathFn();
                 }
                 break;
             }
-            case "e": {
+            case "exponent": {
                 this.problem = new ExponentProblem();
                 if (this.problem instanceof ExponentProblem) {
                     problemResponse = this.problem.mathFn();
@@ -181,14 +140,14 @@ export class Quiz {
             }
         }
         this.questionList.push(`${this.questionNumber}) ${problemResponse.question} = ${problemResponse.answer}`);
-        console.log(`${this.questionNumber}) ${problemResponse.question} = ${problemResponse.answer}`); //DEBUGGING
+        if (this.debug) console.log(`${this.questionNumber}) ${problemResponse.question} = ${problemResponse.answer}`); //DEBUGGING
         this.questionNumber++;
     }
     checkAnswer() {
         let submittedAnswer = parseFloat(this.answerElement.value);
         // submittedAnswer = submittedAnswer
-        console.log({ submittedAnswer });
-        console.log({ answer: this.problem.answer });
+        if (this.debug) console.log({ submittedAnswer });
+        if (this.debug) console.log({ answer: this.problem.answer });
         if (submittedAnswer === this.problem.answer) {
             // Correct
             
@@ -233,12 +192,12 @@ export class Quiz {
         quizOverview = `<div class="overviewCard" id="overview">
           ${quizOverview}
           </div>`;
-        console.log(quizOverview);
+          if (this.debug) console.log(quizOverview);
         document.getElementById("app").innerHTML = quizOverview;
     }
     
     submitCard() {
-        console.log("running this.checkAnswer()");
+        if (this.debug) console.log("running this.checkAnswer()");
         this.checkAnswer();
     }
 }
