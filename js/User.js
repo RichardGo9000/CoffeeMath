@@ -20,7 +20,7 @@ export default class User {
     if (debug) console.log(`[User:load] -> prefs`, prefs);
 
     // If no preferences exist just use the default
-    if (!prefs?.topics) prefs.topics = this.topics;
+    if (!prefs?.topics) prefs = { topics: this.topics };
     // Assign to the class for consumption by the Quiz
     this.topics = { ...prefs.topics };
   }
