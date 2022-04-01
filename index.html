@@ -1,60 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><!-- doctype to tell browser how to render page -->
+<html lang="en"> <!-- open html tag and defin language in use as english -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#125480">
-    <meta name="description" content="Coffee Math is a daily math practice app to strengthen mental math skills.">
-    <link rel="manifest" href="manifest.webmanifest">
-    <!-- <link rel="manifest" href="manifest.json"> -->
+<head> <!-- open html head tag -->
+    <meta charset="UTF-8"><!-- ?define charset in use on page for interoperability with users around the world -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- define the target version of internet explorer to use, ie edge in this case -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- tell mobile devices what zoom level to start on -->
+    <meta name="theme-color" content="#E5F8FF"><!-- ?defining theme color for OSes and search engine -->
+    <meta name="description" content="Coffee Math is a daily math practice app to strengthen mental math skills."><!-- meta tag to describe app to search engines -->
+    <link rel="manifest" href="manifest.webmanifest"><!-- manifest to comply with PWA requirements, tells browsers about the app -->
+    <!-- <link rel="manifest" href="manifest.json"> --> <!-- planned file name change for manifest file -->
 
-    <!-- create dedicated coffeemath icons and include them in index.html, serviceworker, and manifest -->
+    <!-- create dedicated coffeemath icons and include them in index.html, serviceworker, and manifest --<!--  -->>
     <!-- favicon may be the only icons that need to be linked directly from index.html -->
     <!-- the rest of the icons should probably be included in the manifest only -->
     <!-- favicon.ico -->
     <!-- maskable icon much be included in manifest -->
 
-    <!-- <meta name="msapplication-square70x70logo" content="/img/ms-tile-CM-small.png" /> -->
-    <!-- <meta name="msapplication-square150x150logo" content="/img/ms-tile-CM-medium.png" /> -->
-    <!-- <meta name="msapplication-wide310x150logo" content="/img/ms-tile-CM-wide.png" /> -->
-    <!-- <meta name="msapplication-square310x310logo" content="/img/ms-tile-CM-large.png" /> -->
+    <!-- <meta name="msapplication-square70x70logo" content="/img/ms-tile-CM-small.png" /> --><!-- small square logo tile for microsofts mobile os -->
+    <!-- <meta name="msapplication-square150x150logo" content="/img/ms-tile-CM-medium.png" /> --><!-- medium sguare tile for microsoft surface -->
+    <!-- <meta name="msapplication-wide310x150logo" content="/img/ms-tile-CM-wide.png" /> --><!-- wide tile icon for windows surface -->
+    <!-- <meta name="msapplication-square310x310logo" content="/img/ms-tile-CM-large.png" /> --><!-- largest tile icon for ms surface -->
 
-    <!-- <link rel="icon" type="image/png" href="img/favicon-16.png" sizes="16x16" /> -->
-    <!-- <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32" /> -->
-    <!-- <link rel="icon" type="image/png" href="img/favicon-96.png" sizes="96x96" /> -->
+    <!-- <link rel="icon" type="image/png" href="img/favicon-16.png" sizes="16x16" /> --><!-- small favicon for older brosers to display tab icon -->
+    <!-- <link rel="icon" type="image/png" href="img/favicon-32.png" sizes="32x32" /> --><!-- medium icon for older method of displaying tab icon -->
+    <!-- <link rel="icon" type="image/png" href="img/favicon-96.png" sizes="96x96" /> --><!-- large tab icon for older browsers -->
 
     <!-- Apple touch icons should not be transparent -->
-    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-152.png" sizes="152x152" /> -->
-    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-167.png" sizes="167x167" /> -->
-    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-180.png" sizes="180x180" /> -->
-    <link rel="icon" type="image/png" href="img/CM-192.png" sizes="192x192" />
-    <link rel="icon" type="image/png" href="img/CM-512.png" sizes="512x512" />
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-152.png" sizes="152x152" /> --><!-- small apple touch icon for iphones -->
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-167.png" sizes="167x167" /> --><!-- medium apple touch icon for iphones and ipads -->
+    <!-- <link rel="apple-touch-icon" type="image/png" href="img/apple-touch-CM-180.png" sizes="180x180" /> --><!-- large apple touch icon for ipads and macbooks -->
+    <link rel="icon" type="image/png" href="img/CM-192.png" sizes="192x192" /><!-- small general icon to comply with PWA requirements -->
+    <link rel="icon" type="image/png" href="img/CM-512.png" sizes="512x512" /><!-- large general icon for display as PWA icon -->
 
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <title>CoffeeMath</title>
-</head>
+    <link type="text/css" rel="stylesheet" href="css/style.css" /> <!-- css style cheet to style web page -->
+    <title>CoffeeMath</title> <!-- title to display on browser tab -->
+</head><!-- close head tag -->
 
-<body>
-    <input id="settingsCheckbox" type="checkbox" checked="checked">
-    <label for="settingsCheckbox" id="settingsBtn">
-        <img id="settingsGear" type="image" src="img/gear.png" alt="settings" />
-    </label>
+<body><!-- open body tag -->
+    <input id="settingsCheckbox" type="checkbox" checked="checked"><!-- checkbox used to hide/show settings menu -->
+    <label for="settingsCheckbox" id="settingsBtn"><!-- open label tag that holds settings icon -->
+        <img id="settingsGear" type="image" src="img/gear.png" alt="settings" /> <!-- settings icon to convey access to settings without using a particular language -->
+    </label> <!-- close label tag that holds settings icon -->
 
 
-    <div id="app">
-        <p>Loading.</p>
-        <p><span class="finePrint">Please enable JavaScript</span></p>
-<!--         <a id="linkBtn" href="#">Start Quiz</a> -->
-    </div>
+    <div id="app"><!-- div that holds space for app to display settings question and report cards -->
+        <p>Loading.</p><!-- indicate that the page is loading -->
+        <p><span class="finePrint">Please enable JavaScript</span></p><!-- indicate to user that javascript must be enabled to run javascript application -->
+<!--         <a id="linkBtn" href="#">Start Quiz</a> --><!-- link to a possible implementation that uses no clientside javascript -->
+    </div><!-- close app div -->
 
-<!--     <div id="app">
+    <!-- div app that is used for developing style sheet -->
+<!--     <div id="app">  
         <p id="question">1 + 1</p>
         <input id="answer" type="text" />
     </div> -->
 
-
+    <!-- div for developing report card style -->
     <!-- <div class="report" id="app">
         <h1>90%</h1>
             <p><span class="green">✓</span> 1) 14 / 1 = 14</p>
@@ -69,89 +70,89 @@
             <p><span class="green">✓</span> 10) 46 - 20 = 26</p>
     </div> -->
 
-
+<!-- open div for settings card -->
     <div id="settingsCard">
-        <h4>Topics</h4>
-        <label class="checkboxContainer">Addition
-            <input id="topicAddition" type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Subtration
-            <input id="topicSubtraction" type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Multiplication
-            <input id="topicMultiplication" type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Division
-            <input  id="topicDivision"type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Factorial
-            <input id="topicFactorial" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
+        <h4>Topics</h4><!-- title for the topics section of settings menu -->
+        <label class="checkboxContainer">Addition <!-- open label for addition checkbox -->
+            <input id="topicAddition" type="checkbox" checked="checked"> <!-- addition checkbox -->
+            <span class="checkmark"></span> <!-- span containing custom checkmark -->
+        </label><!-- close label for addition setting -->
+        <label class="checkboxContainer">Subtration<!-- open label for  subtraction -->
+            <input id="topicSubtraction" type="checkbox" checked="checked"><!-- checkbox for subtraction -->
+            <span class="checkmark"></span><!-- custome checkmark for subtraction -->
+        </label><!-- close label for subtraction setting -->
+        <label class="checkboxContainer">Multiplication<!-- open label for multiplication setting -->
+            <input id="topicMultiplication" type="checkbox" checked="checked"><!-- checkbox for multiplication -->
+            <span class="checkmark"></span><!-- custom checkmark for checkbox -->
+        </label><!-- close label for multiplication setting -->
+        <label class="checkboxContainer">Division<!-- open label for division setting -->
+            <input  id="topicDivision"type="checkbox" checked="checked"><!-- checkbox for division setting -->
+            <span class="checkmark"></span><!-- custom checkmark for division checkbox -->
+        </label><!-- close label fr division setting -->
+        <label class="checkboxContainer">Factorial<!-- open label tag for factorial setting -->
+            <input id="topicFactorial" type="checkbox"><!-- checkbox for factorial setting -->
+            <span class="checkmark"></span><!-- custom checkmark for factorial setting -->
+        </label><!-- close label tag for factorial setting -->
 
-        <label class="checkboxContainer">Percentage
-            <input id="topicPercentage" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Exponent
-            <input id="topicExponent" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Negatives
-            <input id="topicNegatives" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Fractions
-            <input id="topicFractions" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Decimals
-            <input id="topicDecimals" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Logarithms
-            <input id="topicLogarithms" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
+        <label class="checkboxContainer">Percentage<!-- open label tag for percentage setting -->
+            <input id="topicPercentage" type="checkbox"><!-- checkbox for factorial setting -->
+            <span class="checkmark"></span><!-- custom checkmark for percentage setting -->
+        </label><!-- close label for percentage setting -->
+        <label class="checkboxContainer">Exponent<!-- open exponent label -->
+            <input id="topicExponent" type="checkbox"><!-- checkbox for exponent setting -->
+            <span class="checkmark"></span><!-- custom checkmark for exponent setting -->
+        </label><!-- close label for exponent setting -->
+        <label class="checkboxContainer">Negatives<!-- open label for negatives setting -->
+            <input id="topicNegatives" type="checkbox"><!-- checkbox for negatives setting -->
+            <span class="checkmark"></span><!-- custom checkmark for negatives setting  -->
+        </label><!-- close label for negative settings -->
+        <label class="checkboxContainer">Fractions<!-- open label for fractions setting -->
+            <input id="topicFractions" type="checkbox"><!-- checkbox for fractions setting -->
+            <span class="checkmark"></span><!-- custom checkmark for fractions setting -->
+        </label><!-- close label for fractions setting -->
+        <label class="checkboxContainer">Decimals<!-- open label for decimal setting -->
+            <input id="topicDecimals" type="checkbox"><!-- checkbox for decimal setting -->
+            <span class="checkmark"></span><!-- custom checkmark for decimal setting -->
+        </label><!-- close label for decimal setting -->
+        <label class="checkboxContainer">Logarithms <!-- open label for  logarithm setting -->
+            <input id="topicLogarithms" type="checkbox"> <!-- checkbox for logarithm setting -->
+            <span class="checkmark"></span><!-- custom checkmark for log setting -->
+        </label><!-- close log stetting label -->
 
-        <h4>Options</h4>
-        <label class="checkboxContainer">Time Responses
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Topic Probability
-            <input type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="checkboxContainer">Install
-            <input class="installBtn" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Font Size
-            <select id="font-size" name="font-size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-        </label>
-        <label class="container">Quiz Length
-            <input id="quizLength" type="number" value="10" />
-        </label>
-        <label class="container">Difficulty
-            <select id="difficulty" name="difficulty">
-                <option value="easy">Easy</option>
-                <option value="moderate">Moderate</option>
-                <option value="hard">Hard</option>
-            </select>
-        </label>
-    </div>
+        <h4>Options</h4><!-- title for application settings -->
+        <label class="checkboxContainer">Time Responses<!-- open label for time repsonses setting -->
+            <input type="checkbox"><!-- check box to enable reponse timing -->
+            <span class="checkmark"></span><!-- custom checkmark for response timimng -->
+        </label><!-- close label for response timing -->
+        <label class="checkboxContainer">Topic Probability<!-- open label for weighting the probability of a topic being presented -->
+            <input type="checkbox"><!-- checkbox for topic probability, needs id to be implemented -->
+            <span class="checkmark"></span><!-- custome checkmark for topic probability -->
+        </label><!-- end label for topic probability -->
+        <label class="checkboxContainer">Install<!-- lebel to install pwa -->
+            <input class="installBtn" type="checkbox"><!-- checkbox that actually triggers install -->
+            <span class="checkmark"></span><!-- custom checkmark to show PWA is installed  -->
+        </label><!-- close install option label -->
+        <label class="container">Font Size<!-- open label for font size -->
+            <select id="font-size" name="font-size"><!-- font size select input -->
+                <option value="small">Small</option><!-- small font size option -->
+                <option value="medium">Medium</option><!-- medium font size option -->
+                <option value="large">Large</option><!-- large font size option -->
+            </select><!-- end font size select input -->
+        </label><!-- close font size option label -->
+        <label class="container">Quiz Length<!-- open label to quiz length -->
+            <input id="quizLength" type="number" value="10" /><!-- number input for quiz length option -->
+        </label><!-- close label for quiz length setting -->
+        <label class="container">Difficulty<!-- open label tag for difficulty setting -->
+            <select id="difficulty" name="difficulty"><!-- select input for quiz difficulty -->
+                <option value="easy">Easy</option><!-- easy difficulty option -->
+                <option value="moderate">Moderate</option><!-- medium difficulty option -->
+                <option value="hard">Hard</option><!-- hard difficulty option -->
+            </select><!-- close select input for difficult option -->
+        </label><!-- close label for difficulty option -->
+    </div><!-- close settings menu div tag -->
 
-    <script type="module" src="index.js"></script> 
+    <script type="module" src="index.js"></script> <!-- import javascript file to run the app -->
 
-</body>
+</body> <!-- close the body tag -->
 
-</html>
+</html> <!-- close the html tag ending the page -->
