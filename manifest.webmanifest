@@ -1,21 +1,35 @@
 {
     "name": "CoffeeMath",
+    "_comment1": "name of app",
     "short_name": "CM",
+    "_comment2": "abbreviation for app name",
     "description": "CoffeeMath v1.3: Daily math practice app",
+    "_comment3": "Description for app both for app launchers",
     "background_color": "#125480",
-    "theme_color": "#c4d4df",
+    "_comment4": "background color for app",
+    "theme_color": "#E5F8FF",
+    "_comment5": "theme color for app",
     "display": "fullscreen",
+    "_comment6": "intended way for webapp to be displayed on user device",
     "icons": [
         {
           "src": "img/CM-192.png",
+            "_comment8": "location of small icon",
           "sizes": "192x192",
+            "_comment9": "dimensions of small icon",
           "type": "image/png"
+            "_comment10": "filetype of small icon",
         },
         {
           "src": "img/CM-512.png",
+            "_comment11": "location of large icon",
           "sizes": "512x512",
+            "_comment12": "dimensions, in pixels, of large icon",
           "type": "image/png"
+            "_comment13": "filetype of large icon",
         }
       ], 
-      "start_url": "index.html"
+    "_comment7": "array of icons and their attributes",
+      "start_url": "index.html",
+    "_comment14": "first file to load in our app"
 }
