@@ -1,30 +1,30 @@
-import LocalDB from '../modules/LocalDB.js';
-import enablePWAFunctionality from '../modules/PWA.js';
-import Quiz from '../Quiz.js';
-import User from '../User.js';
+import LocalDB from '../modules/LocalDB.js'; //import localDB files from module
+import enablePWAFunctionality from '../modules/PWA.js';  //import PWA functions
+import Quiz from '../Quiz.js';  //import quiz class
+import User from '../User.js';  //import user class
 
-const topics = [
-  'Addition',
-  'Subtraction',
-  'Division',
-  'Multiplication',
-  'Factorial',
-  'Percentage',
-  'Exponent',
-  'Negatives',
-  'Fractions',
-  'Decimals',
-  'Logarithms',
+const topics = [    //create array of topics
+  'Addition',     //addition topic
+  'Subtraction',  //subtractions topic
+  'Division',  //division topic
+  'Multiplication',  //multiplication topic
+  'Factorial', //factorial topic
+  'Percentage',  // percentage topic
+  'Exponent',  //exponent topic
+  'Negatives', //negatives topic,will affect other topics
+  'Fractions', //fractions topic,will affect other topics
+  'Decimals',  //decimals topic,will affect other topics
+  'Logarithms',  //logarithms topics
 ]
 
-export default class CoffeeMath {
-  constructor(){
+export default class CoffeeMath { //export coffeemath class
+  constructor(){  //define class constructor
     // First enable PWA Functionality
-    enablePWAFunctionality();
+    enablePWAFunctionality();  //defines that enablePWAFunctionality is an exported function of the class
     // Set up the LocalDB
-    this.localDB = new LocalDB();
-    this.user = null;
-    this.quiz = null;
+    this.localDB = new LocalDB();  //assigns class attribute as a new instance of LocalDB
+    this.user = null;   //sets user as the second class attribute
+    this.quiz = null;  //sets quiz as the 3rd class attribute.
   }
 
   async init(debug = false){
