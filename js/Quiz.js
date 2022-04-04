@@ -1,48 +1,48 @@
-import AdditionProblem from "./problems/Addition.js";
-import SubtractionProblem from "./problems/Subtraction.js";
-import MultiplicationProblem from "./problems/Multiplication.js";
-import DivisionProblem from "./problems/Division.js";
-import FactorialProblem from "./problems/Factorial.js";
-import PercentageProblem from "./problems/Percentage.js";
-import ExponentProblem from "./problems/Exponent.js";
-export class Quiz {
+import AdditionProblem from "./problems/Addition.js";  //load addition module
+import SubtractionProblem from "./problems/Subtraction.js";  //load subtraction module
+import MultiplicationProblem from "./problems/Multiplication.js";  //load multiplication module
+import DivisionProblem from "./problems/Division.js"; //load division module
+import FactorialProblem from "./problems/Factorial.js";  //load factorial module
+import PercentageProblem from "./problems/Percentage.js";  //load percentage module
+import ExponentProblem from "./problems/Exponent.js"; //load exponent module
+export class Quiz {  //open definition of class to export as quiz
 
-    constructor(user, debug = false) {
-      this.quizLength = 10;
-      this.correctAnswer = NaN;
-      this.questionString = "";
-      this.questionList = [];
-      this.questionNumber = 1;
-      this.responseTrackingString = "";
+    constructor(user, debug = false) {  //open code block that defines starting data structures for the clas
+      this.quizLength = 10;  //define default quiz length as 10
+      this.correctAnswer = NaN;  //create var to hold answers once submitted
+      this.questionString = "";  //create var to hold the question string
+      this.questionList = []; //init array to hold the whole list of questions for the quiz
+      this.questionNumber = 1; //hold the number of the current question
+      this.responseTrackingString = "";  //keep track of responses from user
       this.responseTracker = []; //use one string per question to track whether response was correct after n number of tries, or skipped (c=correct, i=incorrect, s=skipped[s Not implemented yet])
       this.responseList = []; //use one array per question to track actual responses
-      this.questionDisplay = null;
-      this.answerElement = null;
+      this.questionDisplay = null;  //?variable to link to the element that displays the question
+      this.answerElement = null; //variable to link to the text input for the users answer
         //         this.responseElement = null;
-      this.submitElement = null;
-      this.problem = null;
-      this.menuOpen = false;
-      this.possibleQuestions = [];
-      this.init(user);
-      this.debug = debug;
+      this.submitElement = null;  //variable to link to submit button if needed
+      this.problem = null;  //
+      this.menuOpen = false; //variable that tracks whether menu is open, this is deprecated and can be removed.
+      this.possibleQuestions = []; //array to hold a list of possible topics to display to user
+      this.init(user);  // ???, i think it exposes the init function to code that is calling this class
+      this.debug = debug;  //debug mode, toggles debug logging to console.
     }
 
-    init(user) {
-      for (const [key, value] of Object.entries(user.topics)) {
+    init(user) {  //open init function and a user parameter is required
+      for (const [key, value] of Object.entries(user.topics)) {  // go through the topics element of element and add all items that are marked as true in the topics array to the possibleQuestions array
         // Check if the value is true and if so show it in the array
-        if (value) this.possibleQuestions.push(key);
-      }
-      if (this.debug) console.log('[Quiz:Init]', {topics: this.possibleQuestions})
+        if (value) this.possibleQuestions.push(key); //if value of key is true then push key to possible questions
+      }  //close for loop
+      if (this.debug) console.log('[Quiz:Init]', {topics: this.possibleQuestions})  //if debug is true then log possible questions array to console
         
-      this.setQuestionCard();
-      this.selectRandomProblem();
-      this.answerElement = document.getElementById("answer");
+      this.setQuestionCard();  //call the setQuestioncard function to set up question card div
+      this.selectRandomProblem(); //choose a random question from the possible questions array
+      this.answerElement = document.getElementById("answer");  //connect answerElement object attribute to the answer box in the html page
 
-      document.addEventListener("keydown", (e) => {
-        const regex = /^[0-9.,\-]+$/;
-        if (regex.test(e.key)) {
+      document.addEventListener("keydown", (e) => {  //open key listener
+        const regex = /^[0-9.,\-]+$/;  //define regex for numbers and applicable symbols
+        if (regex.test(e.key)) {  //check if keycode returns true from regex
 
-            if (document.activeElement.tagName != "INPUT")
+            if (document.activeElement.tagName != "INPUT")  //check if the input box is selected and cancel keylistening  (this could be a problem, users could put other data into input box when it is selected
                 this.answerElement.value += e.key;
         }
         else if (e.key == "Backspace") {
