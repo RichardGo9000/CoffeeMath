@@ -1,8 +1,8 @@
-export default function enablePWAFunctionality() {
+export default function enablePWAFunctionality() { //create a function that handles the PWA components
   // registers service worker
-  if ('serviceWorker' in navigator) {
-      //            '../sw.js'
-      navigator.serviceWorker
+  if ('serviceWorker' in navigator) { //redigster service worker to cache files
+      //            '../sw.js' 
+      navigator.serviceWorker 
           .register('sw.js')
           .then(() => {
               console.log('Service worker registered');
