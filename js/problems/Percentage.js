@@ -1,4 +1,4 @@
-
+//this problem class is not yet fully defined
 import Problem from '../Problem.js';
 export class PercentageProblem extends Problem {
     constructor() {
