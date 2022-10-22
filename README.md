@@ -1,4 +1,4 @@
-# CoffeeMath v1.3
+# CoffeeMath v1.5
 
 CoffeeMath is a simple tool to give people a short burst of math practice in the morning or whenever you want to hone your mathematical skills 
 
@@ -8,6 +8,8 @@ settings menu has event listener to check when topics are clicked by the user, a
 Next Step:
 have quiz check localforage to determin which topics to display
 
+Next Step:
+ - [ ] Add geometry questions for square(perimeter, area & find the missing value)
 
 
 To Do:
