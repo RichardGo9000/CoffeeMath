@@ -19,4 +19,4 @@ export class MeanProblem extends Problem {
         return { question: this.question, answer: this.answer };
     }
 }
-export default AdditionProblem;
+export default MeanProblem;
