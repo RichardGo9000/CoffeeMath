@@ -17,7 +17,7 @@ export class SquareAreaProblem extends Problem {
             a = this.randomSingleDigit();
         }
         this.answer = Math.round((a * a) * 1000) / 1000;
-        this.question = `What is the area of a square with a side of ${a}`;
+        this.question = `What is the area of a square with a side of length ${a}`;
         this.display();
         return {question: this.question, answer: this.answer };
     }
