@@ -1,7 +1,7 @@
 //create a problem that presents an image of a square with a dimention and ask for the area
 
 import Problem from '../Problem.js';
-export class SquareAreaProblem extends Problem {
+export class SquareAreaFromSideProblem extends Problem {
     constructor() {
         super();
     }
