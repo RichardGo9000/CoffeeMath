@@ -1,7 +1,7 @@
 //create a problem that presents an image of a square with a dimention and ask for the area
 
 import Problem from '../Problem.js';
-export class SquareAreaFromSideProblem extends Problem {
+export class SquarePerimeterFromAreaProblem extends Problem {
     constructor() {
         super();
     }
@@ -16,7 +16,7 @@ export class SquareAreaFromSideProblem extends Problem {
         else {
             a = this.randomSingleDigit();
         }
-        this.answer = Math.round((Math.sqrt(a) * 4) * 1000) / 1000;
+        this.answer = Math.round((Math.round((Math.sqrt(a) * 1000) / 1000) * 4) * 1000) / 1000;
         this.question = `What is the perimeter of a square with an area of ${a}`;
         this.display();
         return {question: this.question, answer: this.answer };
