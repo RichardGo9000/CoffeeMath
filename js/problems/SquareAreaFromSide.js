@@ -22,7 +22,7 @@ export class SquareAreaFromSideProblem extends Problem {
         return {question: this.question, answer: this.answer };
     }
 }
-export default MeanProblem;
+export default SquareAreaFromSideProblem;
 /*
 6 ways to pressent question about the permieter, area, and side length of a square
 area from perimeter
