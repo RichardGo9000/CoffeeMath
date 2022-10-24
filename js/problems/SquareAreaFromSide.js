@@ -27,7 +27,7 @@ export class SquareAreaFromSideProblem extends Problem {
 area from perimeter
 area from side length
 side length from perimeter
-side length from perimeter
+side length from area
 perimeter from area
 perimeter from side length
 */
