@@ -18,7 +18,7 @@ export class SquareAreaFromPerimeterProblem extends Problem {
         }
         let sideLength = Math.round((a / 4) * 1000) / 1000;  //round side length to 3 digits aft3er the decimal
         this.answer = Math.round((sideLength * sideLength) * 1000) / 1000;
-        this.question = `What is the area of a square with a perimeter of length ${a}`;
+        this.question = `What is the area of a square with a perimeter of ${a}`;
         this.display();
         return {question: this.question, answer: this.answer };
     }
