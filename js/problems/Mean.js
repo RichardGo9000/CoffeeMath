@@ -13,7 +13,7 @@ export class MeanProblem extends Problem {
         d = this.randomSingleDigit();     
         e = this.randomSingleDigit();      
       
-        this.answer = (a + b + c + d + e) / 5;
+        this.answer = Math.round(((a + b + c + d + e) / 5) * 1000) / 1000;
         this.question = `What is the mean of the number set [${a}, ${b}, ${c}, ${d}, ${e}].`;
         this.display();
         return { question: this.question, answer: this.answer };
