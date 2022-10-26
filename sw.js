@@ -25,9 +25,12 @@ self.addEventListener('install', (e) => {
     );
 });
 
+//This fetch event seems to be interferring with porper execution of initDB
+/*
 self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
     e.respondWith(
         caches.match(e.request).then((response) => response || fetch(e.request)),
     );
 });
+*/
