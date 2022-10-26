@@ -22,6 +22,9 @@ export class SquareSideFromPerimeterProblem extends Problem {
         return {question: this.question, answer: this.answer };
     }
 }
+
+export default SquareSideFromPerimeterProblem;
+
 /*
 6 ways to pressent question about the permieter, area, and side length of a square
 area from perimeter
