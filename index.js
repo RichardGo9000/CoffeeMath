@@ -27,6 +27,7 @@ function enablePWAFunctionality() {
         deferredPrompt = e;
         // addBtn.style.display = 'block';
         addBtn.addEventListener('click', () => {
+            console.log('install buttone checkmarked.');
             // addBtn.style.display = 'none';
             //show the prompt
             deferredPrompt.prompt();
