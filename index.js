@@ -45,8 +45,10 @@ function enablePWAFunctionality() {
 enablePWAFunctionality();
 
 // Set up Settings DB
+console.log('*****Begin Datalayer section*******');
 const dataLayer = async () => {
 
+    console.log('**Running Datalayer section**');
         const initDB = async () => {
             const coffeeDB = "CoffeeMathDB";
             localforage.config({
@@ -92,6 +94,7 @@ const dataLayer = async () => {
     (async () => {
         await dataLayer()
     })()
+console.log('*****End Datalayer section*******');
 
 // Listen for settings menu changes
 function addMenuEventListeners() {
