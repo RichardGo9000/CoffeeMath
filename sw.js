@@ -25,12 +25,12 @@ self.addEventListener('install', (e) => {
     );
 });
 
-//Testing if the fetch event listiner is blocking proper execution of innitdb
-/*
+//this fetch event listener is blocking proper execution of innitdb
+
 self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
     e.respondWith(
         caches.match(e.request).then((response) => response || fetch(e.request)),
     );
 });
-*/
+
