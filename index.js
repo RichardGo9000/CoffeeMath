@@ -48,8 +48,9 @@ enablePWAFunctionality();
 console.log('*****Begin Datalayer section*******');
 const dataLayer = async () => {
 
-    console.log('**Running Datalayer section**');
+    console.log('**1) Running Datalayer section**');
         const initDB = async () => {
+            console.log('**2) Running initDB section**');
             const coffeeDB = "CoffeeMathDB";
             localforage.config({
                 name: 'CoffeeMath',
