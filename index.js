@@ -27,6 +27,7 @@ function enablePWAFunctionality() {
         deferredPrompt = e;
         // addBtn.style.display = 'block';
         addBtn.addEventListener('click', () => {
+            console.log('install buttone checkmarked.');
             // addBtn.style.display = 'none';
             //show the prompt
             deferredPrompt.prompt();
@@ -45,9 +46,12 @@ function enablePWAFunctionality() {
 enablePWAFunctionality();
 
 // Set up Settings DB
+console.log('*****Begin Datalayer section*******');
 const dataLayer = async () => {
 
+    console.log('**1) Running Datalayer section**');
         const initDB = async () => {
+            console.log('**2) Running initDB section**');
             const coffeeDB = "CoffeeMathDB";
             localforage.config({
                 name: 'CoffeeMath',
@@ -92,6 +96,7 @@ const dataLayer = async () => {
     (async () => {
         await dataLayer()
     })()
+console.log('*****End Datalayer section*******');
 
 // Listen for settings menu changes
 function addMenuEventListeners() {

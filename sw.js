@@ -25,7 +25,6 @@ self.addEventListener('install', (e) => {
     );
 });
 
-//this fetch event listener is blocking proper execution of innitdb
 
 self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
