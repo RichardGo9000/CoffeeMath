@@ -34,6 +34,7 @@ self.addEventListener('fetch', (e) => {
     );
 });
 */
+// End original faulty fetch event listener
 
 //Begin first fetch request intercept replacement idea
 // This implementation is glitchy and does not fully work
@@ -52,6 +53,7 @@ self.addEventListener('fetch', (e) => {
 // https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
 
 //The following example if from https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/
+// Begin second fetch listener idea
 /*
 console.log('setting fetch event listener');
 self.addEventListener('fetch', (e) => {
@@ -66,9 +68,10 @@ self.addEventListener('fetch', (e) => {
     );
 });
 */
-
+// End second fetch listener idea
 
 // The following is an example from https://web.dev/learn/pwa/serving/
+//Begin third fetch listener idea
 self.addEventListener("fetch", event => {
    event.respondWith(
      caches.match(event.request).then(cachedResponse => {
@@ -84,3 +87,4 @@ self.addEventListener("fetch", event => {
    )
   )
 });
+// End third fetch listener idea
