@@ -60,7 +60,7 @@ self.addEventListener('fetch', (e) => {
             return cache.match(e.request).then((response) => {
                 cache.put(e.request, response.clone());
                     return response;
-                })/*;*/
+                })//;
             });
         })
     );
