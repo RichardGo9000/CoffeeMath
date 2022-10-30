@@ -74,7 +74,7 @@ self.addEventListener("fetch", event => {
      caches.match(event.request).then(cachedResponse => {
          const networkFetch = fetch(event.request).then(response => {
            // update the cache with a clone of the network response
-           caches.open("pwa-assets").then(cache => {
+           caches.open("CoffeeCache").then(cache => {
                cache.put(event.request, response.clone());
            });
          });
