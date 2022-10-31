@@ -1,10 +1,11 @@
 //caches files
 
 console.log('Service Worker Active');
+const cacheName = "CoffeeCahe";
 
 self.addEventListener('install', (e) => {
     e.waitUntil(
-        caches.open('CoffeeCache').then((cache) => cache.addAll([
+        caches.open(cacheName).then((cache) => cache.addAll([
             'index.html',
             'index.js',
             'css/style.css',
