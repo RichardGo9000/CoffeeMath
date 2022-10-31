@@ -34,11 +34,10 @@ self.addEventListener('fetch', (e) => {
 });
 
 
-
-// https://web.dev/learn/pwa/serving/
-
-// https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/
-
-// https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
-
 // https://developer.chrome.com/docs/workbox/caching-strategies-overview/
+
+//   https://web.dev/learn/pwa/serving/
+//   https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/
+//   https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
+
+
