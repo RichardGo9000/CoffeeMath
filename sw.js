@@ -45,7 +45,7 @@ self.addEventListener('fetch', (event) => {
             return fetch(event.request).then((fetchedResponse => {
                 cache.put(event.request, fetchedResponse.clone());
                 return fetchedResponse;
-            });
+            }));
         });
     }));
 });
@@ -56,5 +56,4 @@ self.addEventListener('fetch', (event) => {
 //   https://web.dev/learn/pwa/serving/
 //   https://www.thecodeship.com/web-development/guide-service-worker-pitfalls-best-practices/
 //   https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
-
 
