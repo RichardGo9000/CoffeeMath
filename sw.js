@@ -27,11 +27,27 @@ self.addEventListener('install', (e) => {
 });
 
 
+/*
 self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
     e.respondWith(
         caches.match(e.request).then((response) => response || fetch(e.request)),
     );
+});
+*/
+
+self.addEventListener('fetch', (event) => {
+    event.respondWith(caches.open(cacheName).then((cache) => {
+        return cache.match(event.request.url).then((cachedResponse) => {
+            if (cachedResponse) {
+                return cachedResponse;
+            }
+            return fetch(event.request).then((fetchedResponse_ => {
+                cache.put(event.request, fetchedResponse.clone());
+                return fetchedResponse;
+            });
+        });
+    }));
 });
 
 
