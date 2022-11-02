@@ -20,6 +20,10 @@ function enablePWAFunctionality() {
     let deferredPrompt;
     const addBtn = document.querySelector('.installBtn'); //refactor to install button
 
+    
+    //somewhere near here is the right place to add code to set install button, when checking the box from an unchecked state the install process need to begin 
+    // and when unchecking the box from a checked state, the uninstall process needs to begin
+    // also the app needs to check if it is installed, if so check the box on load.
     window.addEventListener('beforeinstallprompt', (e) => {
         //prevent chrom 67 & earlier from automatically showing prompt
         e.preventDefault();
