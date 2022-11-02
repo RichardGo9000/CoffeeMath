@@ -30,6 +30,7 @@ function enablePWAFunctionality() {
         //stash the event so it can be triggered later
         deferredPrompt = e;
         // addBtn.style.display = 'block';
+        /*
         addBtn.addEventListener('click', () => {
             console.log('install buttone checkmarked.');
             // addBtn.style.display = 'none';
@@ -45,6 +46,7 @@ function enablePWAFunctionality() {
                 deferredPrompt = null;
             });
         });
+        */
     });
 }
 enablePWAFunctionality();
