@@ -192,42 +192,49 @@ const getSettingsFromDB = async () => {
     document.getElementById('topicAddition').checked = topicAddition;
     if (topicAddition) {
         questionsAccumulator.push('a');
+//         questionsAccumulator.push('addition');
     }
     
     let topicSubtraction =  await localforage.getItem('topicSubtraction');
     document.getElementById('topicSubtraction').checked = topicSubtraction;
     if (topicSubtraction) {
         questionsAccumulator.push('s');
+//         questionsAccumulator.push('subtraction');
     }
 
     let topicMultiplication = await localforage.getItem('topicMultiplication');
     document.getElementById('topicMultiplication').checked = topicMultiplication;
     if (topicMultiplication) {
         questionsAccumulator.push('m');
+//         questionsAccumulator.push('multiplication');
     }
 
     let topicDivision = await localforage.getItem('topicDivision');
     document.getElementById('topicDivision').checked = topicDivision;
     if (topicDivision) {
         questionsAccumulator.push('d');
+//         questionsAccumulator.push('division');
     }
 
     let topicFactorial = await localforage.getItem('topicFactorial');
     document.getElementById('topicFactorial').checked = topicFactorial;
     if (topicFactorial) {
         questionsAccumulator.push('f');
+//         questionsAccumulator.push('');
     }
 
     let topicPercentage = await localforage.getItem('topicPercentage');
     document.getElementById('topicPercentage').checked = topicPercentage;
     if (topicPercentage) {
         questionsAccumulator.push('p');
+//         questionsAccumulator.push('percentage');
     }
 
     let topicExponent = await localforage.getItem('topicExponent');
     document.getElementById('topicExponent').checked = topicExponent;
     if (topicExponent) {
         questionsAccumulator.push('e');
+//         questionsAccumulator.push('exponent');
     }
 
     let topicNegatives = await localforage.getItem('topicNegatives');
