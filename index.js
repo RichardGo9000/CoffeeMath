@@ -74,7 +74,7 @@ const dataLayer = async () => {
 
         if (appUpdateLevel == null) {
             const saveDefaultSettings = async () => {
-                localforage.setItem('appUpdateLevel', 50);
+                localforage.setItem('appUpdateLevel', 51);
                 localforage.setItem('topicAddition', true);
                 localforage.setItem('topicSubtraction', true);
                 localforage.setItem('topicMultiplication', true);
