@@ -14,7 +14,7 @@ Next Step:
 
 To Do:
 
-Create a README.md for general description of software, ROADMAP.md for future content and refinements
+Create a README.md for general description of software, ROADMAP.md for future content and refinements, and move buglist to issues on github
 
 Javascript Improvements
 - [x] CLEAN UP CODE BASE
