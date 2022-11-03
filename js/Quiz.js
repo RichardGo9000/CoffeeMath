@@ -42,6 +42,7 @@ export class Quiz {
         if (topicList != null) {
             
 //             this.possibleQuestions = topicList;
+            
 //          CHECK IndexedDB FOR TOPICS TO PRESENT   
             
             console.log("topicList Array: " + topicList);
