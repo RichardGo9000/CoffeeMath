@@ -14,6 +14,7 @@ Next Step:
 
 To Do:
 
+Create a README.md for general description of software, ROADMAP.md for future content and refinements
 
 Javascript Improvements
 - [x] CLEAN UP CODE BASE
