@@ -36,6 +36,7 @@ export class Quiz {
         ];      
     }
 
+    //get topiclist here
     init(topicList = null) {
     console.log("Quiz init function called");
         
