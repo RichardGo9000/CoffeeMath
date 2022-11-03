@@ -8,6 +8,7 @@ import Quiz from './js/Quiz.js';
 
 function enablePWAFunctionality() {
     // registers service worker
+    //consider running this after page has fully loaded, also consider having a list of minimum assets to run that are cached first then, optional assets that cache after that
     if ('serviceWorker' in navigator) {
         //            '../sw.js'
         navigator.serviceWorker
