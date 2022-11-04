@@ -37,8 +37,10 @@ export class Quiz {
     }
 
     //get topiclist here
-    init(topicList = null) {
-    console.log("Quiz init function called");
+//     init(topicList = null) {
+    init(topicList) {
+        console.log(topicList);  //!!THIS WILL LIKELY CAUSE AN ERROR
+        console.log("Quiz init function called");
         
         //Here is where we check wht topics to use or select default if no options are presented
         //if null, serve a basic set of questions
