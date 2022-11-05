@@ -53,7 +53,7 @@ export class Quiz {
 //          CHECK IndexedDB FOR TOPICS TO PRESENT   
             
             console.log("topicList Array: " + topicList);
-            console.log("Topic list returned from db: " + this.possibleQuestions);
+            console.log("Topic list returned from db: " + topicList);
             
                     this.possibleQuestions = [
            "a",
