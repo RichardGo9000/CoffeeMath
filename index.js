@@ -271,4 +271,4 @@ console.log("Calling Quiz()");
 
 // This is the solution to the problem
 let thisQuiz = new Quiz();  //Pass the desired topics from IndexedDB to Quiz as an argument
-thisQuiz.init(getSettingsFromDB());
+thisQuiz.init(await getSettingsFromDB());
