@@ -46,7 +46,7 @@ export class Quiz {
         //if null, serve a basic set of questions
         //if topicslist is provided serve the requested topics
         
-        if (topicList != null) {
+        if (topicList == null) {
             
 //             this.possibleQuestions = topicList;
             
@@ -67,6 +67,8 @@ export class Quiz {
            "f",
            "e",
         ];  
+        } else {
+            this.possibleQuestions = topicList;
         }
         
         this.setupQuestionCard();
